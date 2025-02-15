@@ -697,22 +697,5 @@ namespace standard
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
-
-        private void BtnPurchaseReport_Click(object sender, EventArgs e)
-        {
-            FrmReport frm = new FrmReport();
-            if (!bu.CheckRights(Convert.ToString(frm.Tag), frm.Text))
-            {
-                frm.Close();
-                MessageBox.Show("Rights failed...");
-                return;
-            }
-            foreach (Form F in this.MdiChildren)
-                if (frm.Name == F.Name)
-                { MessageBox.Show("Already Opened.."); return; }
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
     }
 }

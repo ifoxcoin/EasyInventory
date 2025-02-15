@@ -86,8 +86,6 @@
             this.ribbonPanelMaster = new System.Windows.Forms.RibbonPanel();
             this.btnLedger = new System.Windows.Forms.RibbonButton();
             this.btnItemRpt = new System.Windows.Forms.RibbonButton();
-            this.ribbonreport1 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -126,7 +124,6 @@
             this.ribbonatt.Tabs.Add(this.ribbonuser);
             this.ribbonatt.Tabs.Add(this.ribbontools);
             this.ribbonatt.Tabs.Add(this.ribbonreport);
-            this.ribbonatt.Tabs.Add(this.ribbonreport1);
             this.ribbonatt.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbonatt.Text = "Attendance";
             this.ribbonatt.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -495,15 +492,6 @@
             this.btnItemRpt.Text = "Item";
             this.btnItemRpt.Click += new System.EventHandler(this.btnItemRpt_Click);
             // 
-            // ribbonreport1
-            // 
-            this.ribbonreport1.Panels.Add(this.ribbonPanel16);
-            this.ribbonreport1.Text = "Reporting";
-            // 
-            // ribbonPanel16
-            // 
-            this.ribbonPanel16.Text = "Purchase Report";
-            this.ribbonPanel16.Click += new System.EventHandler(this.BtnPurchaseReport_Click);
             // 
             // ribbonPanel13
             // 
@@ -650,7 +638,6 @@
         private System.Windows.Forms.RibbonPanel pnlPayment;
         private System.Windows.Forms.RibbonButton btnPayment;
         private System.Windows.Forms.RibbonTab ribbonreport1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel16;
     }
 }
 

@@ -789,7 +789,7 @@ namespace standard.trans
                             TimeSpan timeSpan = DateTime.Now.Subtract(item2.pm_date.Value);
                             dgvpayment.Rows[num].Cells["cDayscount"].Value = timeSpan.Days;
                             dgvpayment.Rows[num].Cells["cBillAmt"].Value = item2.pm_totamount;
-                            num2 += item2.pm_totamount - item2.pm_paid;
+                            num2 += item2.pm_totamount - (item2.pm_paid ?? 0m);
                             dgvpayment.Rows[num].Cells["cpaid"].Value = 0;
                             dgvpayment.Rows[num].Cells["cExistpaid"].Value = item2.pm_paid;
                             dgvpayment.Rows[num].Cells["cNewBalance"].Value = item2.pm_totamount - item2.pm_paid;
@@ -1045,10 +1045,10 @@ namespace standard.trans
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbltitle.Location = new System.Drawing.Point(533, 10);
+            this.lbltitle.Location = new System.Drawing.Point(508, 4);
             this.lbltitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(93, 23);
+            this.lbltitle.Size = new System.Drawing.Size(144, 35);
             this.lbltitle.TabIndex = 3;
             this.lbltitle.Text = "Payment";
             // 
@@ -1098,10 +1098,10 @@ namespace standard.trans
             this.lblopno.AutoSize = true;
             this.lblopno.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblopno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblopno.Location = new System.Drawing.Point(5, 6);
+            this.lblopno.Location = new System.Drawing.Point(5, 0);
             this.lblopno.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblopno.Name = "lblopno";
-            this.lblopno.Size = new System.Drawing.Size(126, 23);
+            this.lblopno.Size = new System.Drawing.Size(113, 35);
             this.lblopno.TabIndex = 1;
             this.lblopno.Text = "Payment No";
             // 
@@ -1115,7 +1115,7 @@ namespace standard.trans
             this.txtrecno.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtrecno.MaxLength = 20;
             this.txtrecno.Name = "txtrecno";
-            this.txtrecno.Size = new System.Drawing.Size(203, 30);
+            this.txtrecno.Size = new System.Drawing.Size(203, 42);
             this.txtrecno.TabIndex = 0;
             this.txtrecno.TabStop = false;
             // 
@@ -1125,10 +1125,10 @@ namespace standard.trans
             this.lbldate.AutoSize = true;
             this.lbldate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbldate.Location = new System.Drawing.Point(5, 41);
+            this.lbldate.Location = new System.Drawing.Point(5, 35);
             this.lbldate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(95, 23);
+            this.lbldate.Size = new System.Drawing.Size(83, 35);
             this.lbldate.TabIndex = 2;
             this.lbldate.Text = "Rec Date";
             // 
@@ -1141,7 +1141,7 @@ namespace standard.trans
             this.dtprecdate.Location = new System.Drawing.Point(145, 42);
             this.dtprecdate.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.dtprecdate.Name = "dtprecdate";
-            this.dtprecdate.Size = new System.Drawing.Size(201, 30);
+            this.dtprecdate.Size = new System.Drawing.Size(201, 42);
             this.dtprecdate.TabIndex = 0;
             this.dtprecdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpdate_KeyDown);
             // 
@@ -1151,10 +1151,10 @@ namespace standard.trans
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label2.Location = new System.Drawing.Point(365, 6);
+            this.label2.Location = new System.Drawing.Point(365, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 23);
+            this.label2.Size = new System.Drawing.Size(72, 35);
             this.label2.TabIndex = 10;
             this.label2.Text = "City";
             // 
@@ -1170,7 +1170,7 @@ namespace standard.trans
             this.cboCity.Location = new System.Drawing.Point(510, 7);
             this.cboCity.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.cboCity.Name = "cboCity";
-            this.cboCity.Size = new System.Drawing.Size(316, 31);
+            this.cboCity.Size = new System.Drawing.Size(316, 43);
             this.cboCity.TabIndex = 4;
             this.cboCity.ValueMember = "led_id";
             this.cboCity.SelectedValueChanged += new System.EventHandler(this.cboCity_SelectedValueChanged);
@@ -1186,10 +1186,10 @@ namespace standard.trans
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label1.Location = new System.Drawing.Point(5, 76);
+            this.label1.Location = new System.Drawing.Point(5, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 23);
+            this.label1.Size = new System.Drawing.Size(112, 35);
             this.label1.TabIndex = 10;
             this.label1.Text = "Outstanding";
             // 
@@ -1199,10 +1199,10 @@ namespace standard.trans
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label3.Location = new System.Drawing.Point(365, 76);
+            this.label3.Location = new System.Drawing.Point(365, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 23);
+            this.label3.Size = new System.Drawing.Size(131, 35);
             this.label3.TabIndex = 10;
             this.label3.Text = "Paid Amount";
             // 
@@ -1212,10 +1212,10 @@ namespace standard.trans
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label4.Location = new System.Drawing.Point(836, 76);
+            this.label4.Location = new System.Drawing.Point(836, 70);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 23);
+            this.label4.Size = new System.Drawing.Size(129, 35);
             this.label4.TabIndex = 10;
             this.label4.Text = "New Balance";
             // 
@@ -1232,7 +1232,7 @@ namespace standard.trans
             this.txtOutstanding.MaxLength = 10;
             this.txtOutstanding.Name = "txtOutstanding";
             this.txtOutstanding.RightAlign = true;
-            this.txtOutstanding.Size = new System.Drawing.Size(203, 30);
+            this.txtOutstanding.Size = new System.Drawing.Size(203, 42);
             this.txtOutstanding.TabIndex = 11;
             this.txtOutstanding.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOutstanding.Value = new decimal(new int[] {
@@ -1254,7 +1254,7 @@ namespace standard.trans
             this.txtPaidamt.MaxLength = 10;
             this.txtPaidamt.Name = "txtPaidamt";
             this.txtPaidamt.RightAlign = true;
-            this.txtPaidamt.Size = new System.Drawing.Size(316, 30);
+            this.txtPaidamt.Size = new System.Drawing.Size(316, 42);
             this.txtPaidamt.TabIndex = 11;
             this.txtPaidamt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPaidamt.Value = new decimal(new int[] {
@@ -1279,7 +1279,7 @@ namespace standard.trans
             this.txtNewBalance.MaxLength = 10;
             this.txtNewBalance.Name = "txtNewBalance";
             this.txtNewBalance.RightAlign = true;
-            this.txtNewBalance.Size = new System.Drawing.Size(191, 30);
+            this.txtNewBalance.Size = new System.Drawing.Size(191, 42);
             this.txtNewBalance.TabIndex = 11;
             this.txtNewBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNewBalance.Value = new decimal(new int[] {
@@ -1294,10 +1294,10 @@ namespace standard.trans
             this.lblfrom.AutoSize = true;
             this.lblfrom.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblfrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblfrom.Location = new System.Drawing.Point(365, 41);
+            this.lblfrom.Location = new System.Drawing.Point(365, 35);
             this.lblfrom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblfrom.Name = "lblfrom";
-            this.lblfrom.Size = new System.Drawing.Size(106, 23);
+            this.lblfrom.Size = new System.Drawing.Size(123, 35);
             this.lblfrom.TabIndex = 10;
             this.lblfrom.Text = "SUPPLIER";
             // 
@@ -1313,7 +1313,7 @@ namespace standard.trans
             this.cboSupplier.Location = new System.Drawing.Point(510, 42);
             this.cboSupplier.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.cboSupplier.Name = "cboSupplier";
-            this.cboSupplier.Size = new System.Drawing.Size(316, 31);
+            this.cboSupplier.Size = new System.Drawing.Size(316, 43);
             this.cboSupplier.TabIndex = 4;
             this.cboSupplier.ValueMember = "led_id";
             this.cboSupplier.SelectedValueChanged += new System.EventHandler(this.cbopurfrom_SelectedValueChanged);
@@ -1331,10 +1331,10 @@ namespace standard.trans
             this.tableentry.SetColumnSpan(this.lblAddress, 4);
             this.lblAddress.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAddress.Location = new System.Drawing.Point(836, 6);
+            this.lblAddress.Location = new System.Drawing.Point(836, 0);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(16, 23);
+            this.lblAddress.Size = new System.Drawing.Size(24, 35);
             this.lblAddress.TabIndex = 10;
             this.lblAddress.Text = ".";
             // 
@@ -1344,10 +1344,10 @@ namespace standard.trans
             this.lblAddress1.AutoSize = true;
             this.lblAddress1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAddress1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAddress1.Location = new System.Drawing.Point(836, 41);
+            this.lblAddress1.Location = new System.Drawing.Point(836, 35);
             this.lblAddress1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAddress1.Name = "lblAddress1";
-            this.lblAddress1.Size = new System.Drawing.Size(16, 23);
+            this.lblAddress1.Size = new System.Drawing.Size(24, 35);
             this.lblAddress1.TabIndex = 10;
             this.lblAddress1.Text = ".";
             // 
@@ -1357,10 +1357,10 @@ namespace standard.trans
             this.lblpaymentType.AutoSize = true;
             this.lblpaymentType.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblpaymentType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblpaymentType.Location = new System.Drawing.Point(987, 41);
+            this.lblpaymentType.Location = new System.Drawing.Point(987, 35);
             this.lblpaymentType.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblpaymentType.Name = "lblpaymentType";
-            this.lblpaymentType.Size = new System.Drawing.Size(164, 23);
+            this.lblpaymentType.Size = new System.Drawing.Size(251, 35);
             this.lblpaymentType.TabIndex = 10;
             this.lblpaymentType.Text = "OpeningBalance";
             // 
@@ -1802,10 +1802,10 @@ namespace standard.trans
             this.lblsubtitle.AutoSize = true;
             this.lblsubtitle.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblsubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblsubtitle.Location = new System.Drawing.Point(508, 17);
+            this.lblsubtitle.Location = new System.Drawing.Point(470, 11);
             this.lblsubtitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblsubtitle.Name = "lblsubtitle";
-            this.lblsubtitle.Size = new System.Drawing.Size(143, 23);
+            this.lblsubtitle.Size = new System.Drawing.Size(219, 35);
             this.lblsubtitle.TabIndex = 4;
             this.lblsubtitle.Text = "payment LIST";
             // 
@@ -1850,10 +1850,10 @@ namespace standard.trans
             this.dtptdate.CustomFormat = "dd-MM-yyyy";
             this.dtptdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtptdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptdate.Location = new System.Drawing.Point(328, 9);
+            this.dtptdate.Location = new System.Drawing.Point(328, 7);
             this.dtptdate.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.dtptdate.Name = "dtptdate";
-            this.dtptdate.Size = new System.Drawing.Size(203, 30);
+            this.dtptdate.Size = new System.Drawing.Size(203, 42);
             this.dtptdate.TabIndex = 1;
             this.dtptdate.ValueChanged += new System.EventHandler(this.dtptdate_ValueChanged);
             this.dtptdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtptdate_KeyDown);
@@ -1864,10 +1864,10 @@ namespace standard.trans
             this.lblhyp.AutoSize = true;
             this.lblhyp.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblhyp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblhyp.Location = new System.Drawing.Point(295, 12);
+            this.lblhyp.Location = new System.Drawing.Point(290, 6);
             this.lblhyp.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblhyp.Name = "lblhyp";
-            this.lblhyp.Size = new System.Drawing.Size(18, 23);
+            this.lblhyp.Size = new System.Drawing.Size(28, 35);
             this.lblhyp.TabIndex = 1;
             this.lblhyp.Text = "-";
             // 
@@ -1878,10 +1878,10 @@ namespace standard.trans
             this.dtpfdate.CustomFormat = "dd-MM-yyyy";
             this.dtpfdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtpfdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfdate.Location = new System.Drawing.Point(84, 9);
+            this.dtpfdate.Location = new System.Drawing.Point(84, 7);
             this.dtpfdate.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.dtpfdate.Name = "dtpfdate";
-            this.dtpfdate.Size = new System.Drawing.Size(193, 30);
+            this.dtpfdate.Size = new System.Drawing.Size(193, 42);
             this.dtpfdate.TabIndex = 0;
             this.dtpfdate.ValueChanged += new System.EventHandler(this.dtpfdate_ValueChanged);
             this.dtpfdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpfdate_KeyDown);
@@ -1892,10 +1892,10 @@ namespace standard.trans
             this.lblfdate.AutoSize = true;
             this.lblfdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblfdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblfdate.Location = new System.Drawing.Point(5, 12);
+            this.lblfdate.Location = new System.Drawing.Point(5, 0);
             this.lblfdate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblfdate.Name = "lblfdate";
-            this.lblfdate.Size = new System.Drawing.Size(54, 23);
+            this.lblfdate.Size = new System.Drawing.Size(66, 48);
             this.lblfdate.TabIndex = 23;
             this.lblfdate.Text = "Date";
             // 
@@ -1919,10 +1919,10 @@ namespace standard.trans
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label5.Location = new System.Drawing.Point(544, 12);
+            this.label5.Location = new System.Drawing.Point(544, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(72, 35);
             this.label5.TabIndex = 26;
             this.label5.Text = "City";
             // 
@@ -1936,10 +1936,10 @@ namespace standard.trans
             this.cboCityView.DisplayMember = "led_address2";
             this.cboCityView.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.cboCityView.FormattingEnabled = true;
-            this.cboCityView.Location = new System.Drawing.Point(660, 8);
+            this.cboCityView.Location = new System.Drawing.Point(660, 7);
             this.cboCityView.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.cboCityView.Name = "cboCityView";
-            this.cboCityView.Size = new System.Drawing.Size(242, 31);
+            this.cboCityView.Size = new System.Drawing.Size(242, 43);
             this.cboCityView.TabIndex = 27;
             this.cboCityView.ValueMember = "led_id";
             this.cboCityView.SelectedValueChanged += new System.EventHandler(this.cboCityView_SelectedValueChanged);
@@ -1955,10 +1955,10 @@ namespace standard.trans
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label6.Location = new System.Drawing.Point(84, 60);
+            this.label6.Location = new System.Drawing.Point(84, 54);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 23);
+            this.label6.Size = new System.Drawing.Size(136, 35);
             this.label6.TabIndex = 28;
             this.label6.Text = "Supplier";
             // 
@@ -1972,10 +1972,10 @@ namespace standard.trans
             this.cboSupplierView.DisplayMember = "led_name";
             this.cboSupplierView.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.cboSupplierView.FormattingEnabled = true;
-            this.cboSupplierView.Location = new System.Drawing.Point(328, 56);
+            this.cboSupplierView.Location = new System.Drawing.Point(328, 55);
             this.cboSupplierView.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.cboSupplierView.Name = "cboSupplierView";
-            this.cboSupplierView.Size = new System.Drawing.Size(322, 31);
+            this.cboSupplierView.Size = new System.Drawing.Size(322, 43);
             this.cboSupplierView.TabIndex = 29;
             this.cboSupplierView.ValueMember = "led_id";
             this.cboSupplierView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSupplierView_KeyDown);
@@ -2012,7 +2012,7 @@ namespace standard.trans
             // 
             // frmPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(1160, 697);

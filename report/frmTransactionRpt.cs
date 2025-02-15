@@ -40,7 +40,8 @@ namespace standard.report
             LoadData();
             //  this.reportViewer1.RefreshReport();
         }
-        AutoCompleteStringCollection party = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection partyautocompletelist = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection customerautocompletelist = new AutoCompleteStringCollection();
         private void LoadData()
         {
             //TimeSpan ts = new TimeSpan(10, 0, 0, 0);
@@ -63,17 +64,31 @@ namespace standard.report
                 var sup = (from a in db.ledgermasters
                            where a.led_accounttype.ToUpper() == _LedgerType.ToUpper() || a.led_id == 0
                            select new { a.led_id, a.led_name, a.led_address2 });
-                ledgermasterBindingSource.DataSource = sup.OrderBy(x => x.led_address2);
-                uspledgermasterSelectResultBindingSource1.DataSource = db.usp_ledgermasterSelect(null, "Agent", null, null, null);
-                ledgermasterCityBindingSource.DataSource = sup.Select(x => x.led_address2).Distinct();
+                var cus = (from a in db.ledgermasters
+                           where a.led_accounttype.ToUpper() == "CUSTOMER" || a.led_id == 0
+                           select new { a.led_id, a.led_name, a.led_address2 });
 
+                ledgermasterBindingSource.DataSource = sup.OrderBy(x => x.led_address2);
+                uspledgermasterSelectResultBindingSource1.DataSource = db.usp_ledgermasterSelect(null, "Ledger", null, null, null);
+                ledgermasterCityBindingSource.DataSource = sup.Select(x => x.led_address2).Distinct();
+                uspledgermasterCustomerCityBindingSource.DataSource = cus.Select(x => x.led_address2).Distinct();
+                uspledgermasterCustomerSelectResultBindingSource.DataSource = db.usp_ledgermasterSelect(null, "CUSTOMER", null, null, null);
                 foreach (var li in sup)
                 {
-                    party.Add(li.led_name);
+                    partyautocompletelist.Add(li.led_name);
                 }
                 cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
                 cboName.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                cboName.AutoCompleteCustomSource = party;
+                cboName.AutoCompleteCustomSource = partyautocompletelist;
+
+                foreach (var li in sup)
+                {
+                    customerautocompletelist.Add(li.led_name);
+                }
+                cboCustomer.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cboCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboCustomer.AutoCompleteCustomSource = customerautocompletelist;
+
                 //ledgermasterBindingSource.DataSource = sup;
 
 
@@ -85,6 +100,10 @@ namespace standard.report
                 cboPartyType.Visible = false;
                 lblReference.Visible = false;
                 cboReference.Visible = false;
+                lblcityname.Visible = false;
+                cboCustomer.Visible = false;
+                lblCustomer.Visible = false;
+
                 dtpfdate.Select();
             }
             else if (_ReportName == "Ledger Report")
@@ -101,8 +120,8 @@ namespace standard.report
                 lblReference.Visible = false;
                 cboReference.Visible = false;
 
-                lblPartyType.Visible = true;
-                cboPartyType.Visible = true;
+                cboCustomer.Visible = false;
+                lblCustomer.Visible = false;
 
             }
             else if (_ReportName == "AgentCommission Report" || _ReportName == "Agent Outstanding Report")
@@ -127,6 +146,7 @@ namespace standard.report
 
                 cboName.Visible = true;
                 lblLedger.Visible = true;
+                
 
             }
             else
@@ -136,6 +156,8 @@ namespace standard.report
                 cboPartyType.Visible = false;
                 lblReference.Visible = false;
                 cboReference.Visible = false;
+                cboCustomer.Visible = false;
+                lblCustomer.Visible = false;
             }
 
         }
@@ -200,6 +222,7 @@ namespace standard.report
                 reportViewer1.LocalReport.DataSources.Clear();
                 int ledid = Convert.ToInt32(cboName.SelectedValue);
                 int agledid = Convert.ToInt32(cboReference.SelectedValue);
+                int partyid = Convert.ToInt32(cboCustomer.SelectedValue);
                 //   var data = db.usp_ledgermasterSelect(id, null, null, null);
 
                 if (_ReportName == "Purchase Report")
@@ -207,13 +230,13 @@ namespace standard.report
 
                     if (_ReportType == "Summary")
                     {
-                        List<ReportParameter> rparam = new List<ReportParameter>();
-                        rparam.Add(new ReportParameter("city", cboCity.Text));
-                        rparam.Add(new ReportParameter("partyname", cboName.Text));
+                        //List<ReportParameter> rparam = new List<ReportParameter>();
+                        //rparam.Add(new ReportParameter("city", cboCity.Text));
+                        //rparam.Add(new ReportParameter("partyname", cboName.Text));
                         reportViewer1.RefreshReport();
                         var data = db.usp_purchasemasterSelect(null, ledid, dtpfdate.Value, dtptdate.Value, null);
                         reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptPurchaseSummary.rdlc";
-                        reportViewer1.LocalReport.SetParameters(rparam);
+                        //reportViewer1.LocalReport.SetParameters(rparam);
                         ReportDataSource reportsource = new ReportDataSource("DataSet1", data.ToList());
                         reportViewer1.LocalReport.DataSources.Add(reportsource);
 
@@ -233,9 +256,12 @@ namespace standard.report
                     if (_ReportType == "Summary")
                     {
                         var data = db.usp_salesmasterSelect(null, ledid, dtpfdate.Value, dtptdate.Value, null, null);
+                        var ledgerData = db.usp_ledgermasterSelect(ledid, null, null, null, null);
                         reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptSalesSummary.rdlc";
                         ReportDataSource reportsource = new ReportDataSource("DataSet1", data.ToList());
+                        ReportDataSource reportsource_Ledger = new ReportDataSource("DataSet2", ledgerData.ToList());
                         reportViewer1.LocalReport.DataSources.Add(reportsource);
+                        reportViewer1.LocalReport.DataSources.Add(reportsource_Ledger);
 
                     }
                     else
@@ -263,15 +289,18 @@ namespace standard.report
                         MessageBox.Show("Please Select any PartyName...");
                         return;
                     }
-                    List<ReportParameter> rparam = new List<ReportParameter>();
-                    rparam.Add(new ReportParameter("cityname", cboCity.Text));
-                    rparam.Add(new ReportParameter("partyname", cboName.Text));
+                    //List<ReportParameter> rparam = new List<ReportParameter>();
+                    //rparam.Add(new ReportParameter("city", cboCity.Text));
+                    //rparam.Add(new ReportParameter("partyname", cboName.Text));
                     reportViewer1.RefreshReport();
                     var data = db.usp_LedgerOutstandingRpt(ledid, dtpfdate.Value, dtptdate.Value);
+                    var ledgerData = db.usp_ledgermasterSelect(ledid, null, null, null, null);
                     reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptLedgersOutstanding.rdlc";
-                    reportViewer1.LocalReport.SetParameters(rparam);
+                    //reportViewer1.LocalReport.SetParameters(rparam);
                     ReportDataSource reportsource = new ReportDataSource("DataSet1", data.ToList());
+                    ReportDataSource reportsource_Ledger = new ReportDataSource("DataSet2", ledgerData.ToList());
                     reportViewer1.LocalReport.DataSources.Add(reportsource);
+                    reportViewer1.LocalReport.DataSources.Add(reportsource_Ledger);
                 }
                 else if (_ReportName == "AgentCommission Report")
                 {
@@ -283,7 +312,7 @@ namespace standard.report
                 else if (_ReportName == "Agent Outstanding Report")
                 {
 
-                    var data = db.usp_OutstandingReport(null, ledid, dtpfdate.Value, dtptdate.Value);
+                    var data = db.usp_OutstandingReport(null, ledid,partyid, dtpfdate.Value, dtptdate.Value);
                     reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptOutstanding.rdlc";
                     //var data = db.usp_LedgerwiseOutstandingReport(ledid);
                     //reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptLedgerwiseOutstanding.rdlc";
@@ -389,13 +418,18 @@ namespace standard.report
                               where ((a.led_address2 == cboCity.Text.ToString()) && (a.led_accounttype == "Agent"))
                               //orderby a.led_name
                               select new { a.led_id, a.led_name };
+                    //var PartyList = (from a in db.ledgermasters
+                    //           where (a.led_accounttype.ToUpper() == "CUSTOMER" 
+                    //                  || a.led_id == 0)
+                    //           select new { a.led_id, a.led_name, a.led_address2 });
                     cboName.DataSource = sup;
+                    //cboCustomer.DataSource = PartyList;
                     cboName.DisplayMember = "led_name";
                     cboName.ValueMember = "led_id";
-                    party.Clear();
+                    partyautocompletelist.Clear();
                     foreach (var li in sup)
                     {
-                        party.Add(li.led_name);
+                        partyautocompletelist.Add(li.led_name);
                     }
 
                     cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -411,10 +445,29 @@ namespace standard.report
                     cboName.DataSource = sup;
                     cboName.DisplayMember = "led_name";
                     cboName.ValueMember = "led_id";
-                    party.Clear();
+                    partyautocompletelist.Clear();
                     foreach (var li in sup)
                     {
-                        party.Add(li.led_name);
+                        partyautocompletelist.Add(li.led_name);
+                    }
+
+                    cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    cboName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+                else if (_ReportName == "Sales Report")
+                {
+                    //ledgermasterBindingSource.Clear();
+                    var sup = from a in db.ledgermasters
+                                  //orderby a.led_name
+                              where ((a.led_address2 == cboCity.Text.ToString()) && (a.led_accounttype == "Customer"))
+                              select new { a.led_id, a.led_name };
+                    cboName.DataSource = sup;
+                    cboName.DisplayMember = "led_name";
+                    cboName.ValueMember = "led_id";
+                    partyautocompletelist.Clear();
+                    foreach (var li in sup)
+                    {
+                        partyautocompletelist.Add(li.led_name);
                     }
 
                     cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -430,10 +483,10 @@ namespace standard.report
                     cboName.DataSource = sup;
                     cboName.DisplayMember = "led_name";
                     cboName.ValueMember = "led_id";
-                    party.Clear();
+                    partyautocompletelist.Clear();
                     foreach (var li in sup)
                     {
-                        party.Add(li.led_name);
+                        partyautocompletelist.Add(li.led_name);
                     }
 
                     cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -482,5 +535,47 @@ namespace standard.report
             if (e.KeyCode == Keys.Enter)
                 cboCity.Focus();
         }
+
+        private void cityname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                classes.InventoryDataContext db = new classes.InventoryDataContext();
+                var cus = (from a in db.ledgermasters
+                           where a.led_accounttype.ToUpper() == "CUSTOMER" ||  a.led_address2 ==cboCustomerCity.SelectedText.ToString()
+                           select new { a.led_id, a.led_name, a.led_address2 });
+                cboCustomer.DataSource = cus.Select(x => x.led_name).Distinct();
+            }
+        }
+
+        private void cboName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(_ReportName == "Agent Outstanding Report")
+            { 
+            if (cboName.SelectedValue == null)
+                return; // Exit if no ledger is selected
+
+            int? agentId = Convert.ToInt32(cboName.SelectedValue); // Get selected Ledger ID
+
+            using (InventoryDataContext inventoryDataContext = new InventoryDataContext())
+            {
+                // Fetch only customers related to the selected ledger
+                var customers = inventoryDataContext.usp_ledgermasterSelect(null, null, null, null, agentId)
+                                .Select(c => new
+                                {
+                                    CustomerID = c.led_id,    // Replace with actual column name from DB
+                            CustomerName = c.led_name // Replace with actual column name from DB
+                        })
+                                .ToList();
+
+                // Bind filtered customers to cboCustomer
+                cboCustomer.DataSource = customers;
+                cboCustomer.DisplayMember = "CustomerName"; // Display Name
+                cboCustomer.ValueMember = "CustomerID";     // Store ID as value
+            }
+            }
+
+        }
+
     }
 }

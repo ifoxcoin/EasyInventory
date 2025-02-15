@@ -436,7 +436,7 @@ namespace standard.trans
 								long? no = 0L;
 								inventoryDataContext.usp_setYearNo("pur_no", global.sysdate, ref no);
 								purchasemaster.pm_no = Convert.ToInt64(no);
-								inventoryDataContext.usp_purchasemasterInsert(ref id, purchasemaster.pm_no, purchasemaster.pm_date, purchasemaster.led_id, purchasemaster.pm_totqty, purchasemaster.pm_totamount, global.comid, global.ucode, global.sysdate, purchasemaster.pm_desc, true);
+								inventoryDataContext.usp_purchasemasterInsert(ref id, purchasemaster.pm_no, purchasemaster.pm_date, purchasemaster.led_id, purchasemaster.pm_totqty, purchasemaster.pm_totamount, global.comid, global.ucode, global.sysdate, purchasemaster.pm_desc, false, purchasemaster.pm_paid);
 								foreach (DataGridViewRow item2 in (IEnumerable)dgvPurchase.Rows)
 								{
 									if (!item2.IsNewRow)
@@ -456,7 +456,7 @@ namespace standard.trans
 							else
 							{
 								purchasemaster.pm_no = Convert.ToInt64(txtpurno.Text);
-								inventoryDataContext.usp_purchasemasterUpdate(Convert.ToInt64(id), purchasemaster.pm_no, purchasemaster.pm_date, purchasemaster.led_id, purchasemaster.pm_totqty, purchasemaster.pm_totamount, global.comid, global.ucode, global.sysdate, purchasemaster.pm_desc, true);
+								inventoryDataContext.usp_purchasemasterUpdate(Convert.ToInt64(id), purchasemaster.pm_no, purchasemaster.pm_date, purchasemaster.led_id, purchasemaster.pm_totqty, purchasemaster.pm_totamount, global.comid, global.ucode, global.sysdate, purchasemaster.pm_desc, false, purchasemaster.pm_paid);
 								inventoryDataContext.usp_purchasedetailsDelete(Convert.ToInt32(id));
 								inventoryDataContext.usp_stockDelete(Convert.ToInt32(id), "PURCHASE");
 								foreach (DataGridViewRow item3 in (IEnumerable)dgvPurchase.Rows)
@@ -1257,10 +1257,10 @@ namespace standard.trans
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbltitle.Location = new System.Drawing.Point(8, 9);
+            this.lbltitle.Location = new System.Drawing.Point(8, 3);
             this.lbltitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(115, 23);
+            this.lbltitle.Size = new System.Drawing.Size(173, 35);
             this.lbltitle.TabIndex = 3;
             this.lbltitle.Text = "PURCHASE";
             // 
@@ -1300,10 +1300,10 @@ namespace standard.trans
             this.lblopno.AutoSize = true;
             this.lblopno.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblopno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblopno.Location = new System.Drawing.Point(6, 8);
+            this.lblopno.Location = new System.Drawing.Point(6, 0);
             this.lblopno.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblopno.Name = "lblopno";
-            this.lblopno.Size = new System.Drawing.Size(129, 23);
+            this.lblopno.Size = new System.Drawing.Size(158, 40);
             this.lblopno.TabIndex = 1;
             this.lblopno.Text = "Purchase No";
             // 
@@ -1318,7 +1318,7 @@ namespace standard.trans
             this.txtpurno.MaxLength = 20;
             this.txtpurno.Name = "txtpurno";
             this.txtpurno.ReadOnly = true;
-            this.txtpurno.Size = new System.Drawing.Size(200, 30);
+            this.txtpurno.Size = new System.Drawing.Size(200, 42);
             this.txtpurno.TabIndex = 0;
             this.txtpurno.TabStop = false;
             // 
@@ -1328,10 +1328,10 @@ namespace standard.trans
             this.lbldate.AutoSize = true;
             this.lbldate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbldate.Location = new System.Drawing.Point(6, 48);
+            this.lbldate.Location = new System.Drawing.Point(6, 42);
             this.lbldate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(92, 23);
+            this.lbldate.Size = new System.Drawing.Size(143, 35);
             this.lbldate.TabIndex = 2;
             this.lbldate.Text = "Pur Date";
             // 
@@ -1344,7 +1344,7 @@ namespace standard.trans
             this.dtppurdate.Location = new System.Drawing.Point(202, 46);
             this.dtppurdate.Margin = new System.Windows.Forms.Padding(6);
             this.dtppurdate.Name = "dtppurdate";
-            this.dtppurdate.Size = new System.Drawing.Size(200, 30);
+            this.dtppurdate.Size = new System.Drawing.Size(200, 42);
             this.dtppurdate.TabIndex = 0;
             this.dtppurdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpdate_KeyDown);
             // 
@@ -1354,10 +1354,10 @@ namespace standard.trans
             this.lblfrom.AutoSize = true;
             this.lblfrom.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblfrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblfrom.Location = new System.Drawing.Point(794, 8);
+            this.lblfrom.Location = new System.Drawing.Point(794, 0);
             this.lblfrom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblfrom.Name = "lblfrom";
-            this.lblfrom.Size = new System.Drawing.Size(151, 23);
+            this.lblfrom.Size = new System.Drawing.Size(149, 40);
             this.lblfrom.TabIndex = 10;
             this.lblfrom.Text = "Purchase From";
             // 
@@ -1367,10 +1367,10 @@ namespace standard.trans
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label2.Location = new System.Drawing.Point(438, 8);
+            this.label2.Location = new System.Drawing.Point(438, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 23);
+            this.label2.Size = new System.Drawing.Size(44, 40);
             this.label2.TabIndex = 10;
             this.label2.Text = "City";
             // 
@@ -1386,7 +1386,7 @@ namespace standard.trans
             this.cboCity.Location = new System.Drawing.Point(500, 6);
             this.cboCity.Margin = new System.Windows.Forms.Padding(6);
             this.cboCity.Name = "cboCity";
-            this.cboCity.Size = new System.Drawing.Size(282, 31);
+            this.cboCity.Size = new System.Drawing.Size(282, 43);
             this.cboCity.TabIndex = 4;
             this.cboCity.ValueMember = "led_id";
             this.cboCity.SelectedValueChanged += new System.EventHandler(this.cboCity_SelectedValueChanged);
@@ -1403,10 +1403,10 @@ namespace standard.trans
             this.tableentry.SetColumnSpan(this.lblAddress, 4);
             this.lblAddress.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAddress.Location = new System.Drawing.Point(794, 48);
+            this.lblAddress.Location = new System.Drawing.Point(794, 42);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(16, 23);
+            this.lblAddress.Size = new System.Drawing.Size(24, 35);
             this.lblAddress.TabIndex = 10;
             this.lblAddress.Text = ".";
             // 
@@ -1422,7 +1422,7 @@ namespace standard.trans
             this.cbopurfrom.Location = new System.Drawing.Point(962, 6);
             this.cbopurfrom.Margin = new System.Windows.Forms.Padding(6);
             this.cbopurfrom.Name = "cbopurfrom";
-            this.cbopurfrom.Size = new System.Drawing.Size(288, 31);
+            this.cbopurfrom.Size = new System.Drawing.Size(288, 43);
             this.cbopurfrom.TabIndex = 4;
             this.cbopurfrom.ValueMember = "led_id";
             this.cbopurfrom.SelectedValueChanged += new System.EventHandler(this.cbopurfrom_SelectedValueChanged);
@@ -1537,10 +1537,10 @@ namespace standard.trans
             this.lbltotqty.AutoSize = true;
             this.lbltotqty.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbltotqty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbltotqty.Location = new System.Drawing.Point(6, 11);
+            this.lbltotqty.Location = new System.Drawing.Point(6, 5);
             this.lbltotqty.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbltotqty.Name = "lbltotqty";
-            this.lbltotqty.Size = new System.Drawing.Size(99, 23);
+            this.lbltotqty.Size = new System.Drawing.Size(149, 35);
             this.lbltotqty.TabIndex = 2;
             this.lbltotqty.Text = "Total Qty";
             // 
@@ -1552,12 +1552,12 @@ namespace standard.trans
             this.txttotqty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txttotqty.DecimalPlaces = 2;
             this.txttotqty.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txttotqty.Location = new System.Drawing.Point(211, 7);
+            this.txttotqty.Location = new System.Drawing.Point(211, 6);
             this.txttotqty.Margin = new System.Windows.Forms.Padding(6);
             this.txttotqty.Name = "txttotqty";
             this.txttotqty.ReadOnly = true;
             this.txttotqty.RightAlign = true;
-            this.txttotqty.Size = new System.Drawing.Size(193, 30);
+            this.txttotqty.Size = new System.Drawing.Size(193, 42);
             this.txttotqty.TabIndex = 5;
             this.txttotqty.TabStop = false;
             this.txttotqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1575,12 +1575,12 @@ namespace standard.trans
             this.txttotamt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txttotamt.DecimalPlaces = 2;
             this.txttotamt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txttotamt.Location = new System.Drawing.Point(621, 7);
+            this.txttotamt.Location = new System.Drawing.Point(621, 6);
             this.txttotamt.Margin = new System.Windows.Forms.Padding(6);
             this.txttotamt.Name = "txttotamt";
             this.txttotamt.ReadOnly = true;
             this.txttotamt.RightAlign = true;
-            this.txttotamt.Size = new System.Drawing.Size(193, 30);
+            this.txttotamt.Size = new System.Drawing.Size(193, 42);
             this.txttotamt.TabIndex = 6;
             this.txttotamt.TabStop = false;
             this.txttotamt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1596,10 +1596,10 @@ namespace standard.trans
             this.lblnetamt.AutoSize = true;
             this.lblnetamt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblnetamt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblnetamt.Location = new System.Drawing.Point(416, 11);
+            this.lblnetamt.Location = new System.Drawing.Point(416, 5);
             this.lblnetamt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblnetamt.Name = "lblnetamt";
-            this.lblnetamt.Size = new System.Drawing.Size(125, 23);
+            this.lblnetamt.Size = new System.Drawing.Size(191, 35);
             this.lblnetamt.TabIndex = 8;
             this.lblnetamt.Text = "Net Amount";
             // 
@@ -1955,10 +1955,10 @@ namespace standard.trans
             this.lblsubtitle.AutoSize = true;
             this.lblsubtitle.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblsubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblsubtitle.Location = new System.Drawing.Point(8, 16);
+            this.lblsubtitle.Location = new System.Drawing.Point(8, 10);
             this.lblsubtitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblsubtitle.Name = "lblsubtitle";
-            this.lblsubtitle.Size = new System.Drawing.Size(165, 23);
+            this.lblsubtitle.Size = new System.Drawing.Size(249, 35);
             this.lblsubtitle.TabIndex = 4;
             this.lblsubtitle.Text = "PURCHASE LIST";
             // 
@@ -2003,10 +2003,10 @@ namespace standard.trans
             this.lblBillNo.AutoSize = true;
             this.lblBillNo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblBillNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblBillNo.Location = new System.Drawing.Point(444, 12);
+            this.lblBillNo.Location = new System.Drawing.Point(444, 0);
             this.lblBillNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBillNo.Name = "lblBillNo";
-            this.lblBillNo.Size = new System.Drawing.Size(68, 23);
+            this.lblBillNo.Size = new System.Drawing.Size(84, 47);
             this.lblBillNo.TabIndex = 35;
             this.lblBillNo.Text = "BillNo";
             // 
@@ -2016,10 +2016,10 @@ namespace standard.trans
             this.dtptdate.CustomFormat = "dd-MM-yyyy";
             this.dtptdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtptdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptdate.Location = new System.Drawing.Point(285, 8);
+            this.dtptdate.Location = new System.Drawing.Point(285, 6);
             this.dtptdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dtptdate.Name = "dtptdate";
-            this.dtptdate.Size = new System.Drawing.Size(149, 30);
+            this.dtptdate.Size = new System.Drawing.Size(149, 42);
             this.dtptdate.TabIndex = 1;
             this.dtptdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtptdate_KeyDown);
             // 
@@ -2029,10 +2029,10 @@ namespace standard.trans
             this.lblfdate.AutoSize = true;
             this.lblfdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblfdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblfdate.Location = new System.Drawing.Point(4, 12);
+            this.lblfdate.Location = new System.Drawing.Point(4, 6);
             this.lblfdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfdate.Name = "lblfdate";
-            this.lblfdate.Size = new System.Drawing.Size(54, 23);
+            this.lblfdate.Size = new System.Drawing.Size(83, 35);
             this.lblfdate.TabIndex = 23;
             this.lblfdate.Text = "Date";
             // 
@@ -2042,10 +2042,10 @@ namespace standard.trans
             this.lblhyp.AutoSize = true;
             this.lblhyp.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhyp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblhyp.Location = new System.Drawing.Point(263, 14);
+            this.lblhyp.Location = new System.Drawing.Point(263, 9);
             this.lblhyp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblhyp.Name = "lblhyp";
-            this.lblhyp.Size = new System.Drawing.Size(14, 18);
+            this.lblhyp.Size = new System.Drawing.Size(14, 28);
             this.lblhyp.TabIndex = 1;
             this.lblhyp.Text = "-";
             // 
@@ -2055,10 +2055,10 @@ namespace standard.trans
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label6.Location = new System.Drawing.Point(444, 59);
+            this.label6.Location = new System.Drawing.Point(444, 47);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 23);
+            this.label6.Size = new System.Drawing.Size(97, 48);
             this.label6.TabIndex = 31;
             this.label6.Text = "Supplier";
             // 
@@ -2069,10 +2069,10 @@ namespace standard.trans
             this.dtpfdate.CustomFormat = "dd-MM-yyyy";
             this.dtpfdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtpfdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfdate.Location = new System.Drawing.Point(96, 8);
+            this.dtpfdate.Location = new System.Drawing.Point(96, 6);
             this.dtpfdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dtpfdate.Name = "dtpfdate";
-            this.dtpfdate.Size = new System.Drawing.Size(159, 30);
+            this.dtpfdate.Size = new System.Drawing.Size(159, 42);
             this.dtpfdate.TabIndex = 0;
             this.dtpfdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpfdate_KeyDown);
             // 
@@ -2082,10 +2082,10 @@ namespace standard.trans
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label5.Location = new System.Drawing.Point(4, 59);
+            this.label5.Location = new System.Drawing.Point(4, 53);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(72, 35);
             this.label5.TabIndex = 29;
             this.label5.Text = "City";
             // 
@@ -2099,10 +2099,10 @@ namespace standard.trans
             this.cboCityView.DisplayMember = "led_address2";
             this.cboCityView.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.cboCityView.FormattingEnabled = true;
-            this.cboCityView.Location = new System.Drawing.Point(96, 55);
+            this.cboCityView.Location = new System.Drawing.Point(96, 53);
             this.cboCityView.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cboCityView.Name = "cboCityView";
-            this.cboCityView.Size = new System.Drawing.Size(340, 31);
+            this.cboCityView.Size = new System.Drawing.Size(340, 43);
             this.cboCityView.TabIndex = 30;
             this.cboCityView.ValueMember = "led_id";
             this.cboCityView.SelectedValueChanged += new System.EventHandler(this.cboCityView_SelectedValueChanged);
@@ -2115,9 +2115,9 @@ namespace standard.trans
             // txtSearchBillNo
             // 
             this.txtSearchBillNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSearchBillNo.Location = new System.Drawing.Point(548, 8);
+            this.txtSearchBillNo.Location = new System.Drawing.Point(548, 3);
             this.txtSearchBillNo.Name = "txtSearchBillNo";
-            this.txtSearchBillNo.Size = new System.Drawing.Size(85, 30);
+            this.txtSearchBillNo.Size = new System.Drawing.Size(85, 42);
             this.txtSearchBillNo.TabIndex = 34;
             this.txtSearchBillNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchBillNo_KeyDown);
             // 
@@ -2147,10 +2147,10 @@ namespace standard.trans
             this.cboSupplierView.DisplayMember = "led_name";
             this.cboSupplierView.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.cboSupplierView.FormattingEnabled = true;
-            this.cboSupplierView.Location = new System.Drawing.Point(549, 55);
+            this.cboSupplierView.Location = new System.Drawing.Point(549, 53);
             this.cboSupplierView.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cboSupplierView.Name = "cboSupplierView";
-            this.cboSupplierView.Size = new System.Drawing.Size(329, 31);
+            this.cboSupplierView.Size = new System.Drawing.Size(329, 43);
             this.cboSupplierView.TabIndex = 36;
             this.cboSupplierView.ValueMember = "led_id";
             // 
@@ -2186,7 +2186,7 @@ namespace standard.trans
             // 
             // frmPurchase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(1315, 690);

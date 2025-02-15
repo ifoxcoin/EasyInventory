@@ -666,10 +666,11 @@ namespace standard.master
             this.a1Paneltitle.GradientStartColor = System.Drawing.Color.White;
             this.a1Paneltitle.Image = null;
             this.a1Paneltitle.ImageLocation = new System.Drawing.Point(4, 4);
-            this.a1Paneltitle.Location = new System.Drawing.Point(4, 4);
+            this.a1Paneltitle.Location = new System.Drawing.Point(5, 6);
+            this.a1Paneltitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.a1Paneltitle.Name = "a1Paneltitle";
             this.a1Paneltitle.ShadowOffSet = 0;
-            this.a1Paneltitle.Size = new System.Drawing.Size(1223, 29);
+            this.a1Paneltitle.Size = new System.Drawing.Size(1836, 44);
             this.a1Paneltitle.TabIndex = 0;
             // 
             // lbltitle
@@ -679,9 +680,10 @@ namespace standard.master
             this.lbltitle.BackColor = System.Drawing.Color.Transparent;
             this.lbltitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbltitle.Location = new System.Drawing.Point(25, 5);
+            this.lbltitle.Location = new System.Drawing.Point(38, 8);
+            this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(60, 18);
+            this.lbltitle.Size = new System.Drawing.Size(91, 28);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Ledger";
             this.lbltitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -698,26 +700,27 @@ namespace standard.master
             this.tblMain.Controls.Add(this.tblCommand, 0, 4);
             this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblMain.Location = new System.Drawing.Point(0, 0);
+            this.tblMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblMain.Name = "tblMain";
             this.tblMain.RowCount = 5;
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 385F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tblMain.Size = new System.Drawing.Size(1231, 698);
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tblMain.Size = new System.Drawing.Size(1846, 1074);
             this.tblMain.TabIndex = 0;
             // 
             // tblSearch
             // 
             this.tblSearch.ColumnCount = 8;
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblSearch.Controls.Add(this.lblSearch, 0, 0);
             this.tblSearch.Controls.Add(this.txtSearch, 1, 0);
@@ -727,11 +730,12 @@ namespace standard.master
             this.tblSearch.Controls.Add(this.cboGridReference, 5, 0);
             this.tblSearch.Controls.Add(this.lblCount, 6, 0);
             this.tblSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblSearch.Location = new System.Drawing.Point(4, 291);
+            this.tblSearch.Location = new System.Drawing.Point(5, 447);
+            this.tblSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblSearch.Name = "tblSearch";
             this.tblSearch.RowCount = 1;
             this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblSearch.Size = new System.Drawing.Size(1223, 39);
+            this.tblSearch.Size = new System.Drawing.Size(1836, 59);
             this.tblSearch.TabIndex = 3;
             // 
             // lblSearch
@@ -741,9 +745,10 @@ namespace standard.master
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblSearch.Location = new System.Drawing.Point(3, 10);
+            this.lblSearch.Location = new System.Drawing.Point(4, 15);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(186, 18);
+            this.lblSearch.Size = new System.Drawing.Size(289, 28);
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Search By Ledger Name";
             this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -753,10 +758,11 @@ namespace standard.master
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.Location = new System.Drawing.Point(203, 3);
+            this.txtSearch.Location = new System.Drawing.Point(304, 5);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.MaxLength = 50;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(194, 26);
+            this.txtSearch.Size = new System.Drawing.Size(290, 35);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
@@ -768,9 +774,10 @@ namespace standard.master
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label20.Location = new System.Drawing.Point(403, 10);
+            this.label20.Location = new System.Drawing.Point(604, 15);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(117, 18);
+            this.label20.Size = new System.Drawing.Size(180, 28);
             this.label20.TabIndex = 2;
             this.label20.Text = "Search By City";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -780,10 +787,11 @@ namespace standard.master
             this.txtSearchbyCity.BackColor = System.Drawing.Color.White;
             this.txtSearchbyCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchbyCity.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtSearchbyCity.Location = new System.Drawing.Point(553, 3);
+            this.txtSearchbyCity.Location = new System.Drawing.Point(829, 5);
+            this.txtSearchbyCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchbyCity.MaxLength = 50;
             this.txtSearchbyCity.Name = "txtSearchbyCity";
-            this.txtSearchbyCity.Size = new System.Drawing.Size(194, 26);
+            this.txtSearchbyCity.Size = new System.Drawing.Size(290, 35);
             this.txtSearchbyCity.TabIndex = 1;
             this.txtSearchbyCity.TextChanged += new System.EventHandler(this.txtSearchItemCode_TextChanged);
             this.txtSearchbyCity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
@@ -795,9 +803,10 @@ namespace standard.master
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label24.Location = new System.Drawing.Point(773, 10);
+            this.label24.Location = new System.Drawing.Point(1159, 15);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(85, 18);
+            this.label24.Size = new System.Drawing.Size(131, 28);
             this.label24.TabIndex = 2;
             this.label24.Text = "Reference";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -812,9 +821,10 @@ namespace standard.master
             this.cboGridReference.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboGridReference.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.cboGridReference.FormattingEnabled = true;
-            this.cboGridReference.Location = new System.Drawing.Point(873, 3);
+            this.cboGridReference.Location = new System.Drawing.Point(1309, 5);
+            this.cboGridReference.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboGridReference.Name = "cboGridReference";
-            this.cboGridReference.Size = new System.Drawing.Size(194, 26);
+            this.cboGridReference.Size = new System.Drawing.Size(289, 36);
             this.cboGridReference.TabIndex = 2;
             this.cboGridReference.ValueMember = "led_id";
             this.cboGridReference.TextChanged += new System.EventHandler(this.cboGridReference_TextChanged);
@@ -824,10 +834,10 @@ namespace standard.master
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCount.Location = new System.Drawing.Point(1095, 0);
-            this.lblCount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCount.Location = new System.Drawing.Point(1643, 0);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(16, 23);
+            this.lblCount.Size = new System.Drawing.Size(24, 35);
             this.lblCount.TabIndex = 11;
             this.lblCount.Text = ".";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -888,7 +898,8 @@ namespace standard.master
             this.dgview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgview.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.dgview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgview.Location = new System.Drawing.Point(4, 337);
+            this.dgview.Location = new System.Drawing.Point(5, 517);
+            this.dgview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgview.MultiSelect = false;
             this.dgview.Name = "dgview";
             this.dgview.ReadOnly = true;
@@ -905,7 +916,7 @@ namespace standard.master
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.dgview.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgview.Size = new System.Drawing.Size(1223, 311);
+            this.dgview.Size = new System.Drawing.Size(1836, 481);
             this.dgview.TabIndex = 1;
             this.dgview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgview_CellDoubleClick);
             // 
@@ -1070,12 +1081,12 @@ namespace standard.master
             // tblEntry
             // 
             this.tblEntry.ColumnCount = 7;
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tblEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblEntry.Controls.Add(this.txtPartyName, 1, 0);
             this.tblEntry.Controls.Add(this.label1, 0, 0);
@@ -1122,21 +1133,22 @@ namespace standard.master
             this.tblEntry.Controls.Add(this.label6, 3, 7);
             this.tblEntry.Controls.Add(this.txtDisPer, 3, 6);
             this.tblEntry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblEntry.Location = new System.Drawing.Point(4, 40);
+            this.tblEntry.Location = new System.Drawing.Point(5, 61);
+            this.tblEntry.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblEntry.Name = "tblEntry";
             this.tblEntry.RowCount = 10;
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblEntry.Size = new System.Drawing.Size(1223, 244);
+            this.tblEntry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tblEntry.Size = new System.Drawing.Size(1836, 375);
             this.tblEntry.TabIndex = 1;
             // 
             // txtPartyName
@@ -1144,10 +1156,11 @@ namespace standard.master
             this.txtPartyName.BackColor = System.Drawing.Color.White;
             this.txtPartyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPartyName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtPartyName.Location = new System.Drawing.Point(153, 3);
+            this.txtPartyName.Location = new System.Drawing.Point(229, 5);
+            this.txtPartyName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPartyName.MaxLength = 50;
             this.txtPartyName.Name = "txtPartyName";
-            this.txtPartyName.Size = new System.Drawing.Size(194, 26);
+            this.txtPartyName.Size = new System.Drawing.Size(290, 35);
             this.txtPartyName.TabIndex = 1;
             this.txtPartyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1158,9 +1171,10 @@ namespace standard.master
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(4, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 18);
+            this.label1.Size = new System.Drawing.Size(149, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Party Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1172,9 +1186,10 @@ namespace standard.master
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label2.Location = new System.Drawing.Point(3, 36);
+            this.label2.Location = new System.Drawing.Point(4, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 18);
+            this.label2.Size = new System.Drawing.Size(69, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Code";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1186,9 +1201,10 @@ namespace standard.master
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label3.Location = new System.Drawing.Point(3, 66);
+            this.label3.Location = new System.Drawing.Point(4, 101);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 18);
+            this.label3.Size = new System.Drawing.Size(143, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Party Type ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1198,10 +1214,11 @@ namespace standard.master
             this.txtCode.BackColor = System.Drawing.Color.White;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCode.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtCode.Location = new System.Drawing.Point(153, 33);
+            this.txtCode.Location = new System.Drawing.Point(229, 51);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCode.MaxLength = 50;
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(194, 26);
+            this.txtCode.Size = new System.Drawing.Size(290, 35);
             this.txtCode.TabIndex = 2;
             this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
@@ -1218,9 +1235,10 @@ namespace standard.master
             "Customer",
             "Supplier",
             "Agent"});
-            this.cboType.Location = new System.Drawing.Point(153, 63);
+            this.cboType.Location = new System.Drawing.Point(229, 97);
+            this.cboType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(194, 26);
+            this.cboType.Size = new System.Drawing.Size(289, 36);
             this.cboType.TabIndex = 3;
             this.cboType.TextChanged += new System.EventHandler(this.cboType_TextChanged);
             this.cboType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
@@ -1233,9 +1251,10 @@ namespace standard.master
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label15.Location = new System.Drawing.Point(353, 6);
+            this.label15.Location = new System.Drawing.Point(529, 9);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 18);
+            this.label15.Size = new System.Drawing.Size(164, 28);
             this.label15.TabIndex = 16;
             this.label15.Text = "Owner Name";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1247,9 +1266,10 @@ namespace standard.master
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label8.Location = new System.Drawing.Point(353, 36);
+            this.label8.Location = new System.Drawing.Point(529, 55);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 18);
+            this.label8.Size = new System.Drawing.Size(169, 28);
             this.label8.TabIndex = 18;
             this.label8.Text = "Owner Phone";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1261,9 +1281,10 @@ namespace standard.master
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label13.Location = new System.Drawing.Point(353, 66);
+            this.label13.Location = new System.Drawing.Point(529, 101);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 18);
+            this.label13.Size = new System.Drawing.Size(189, 28);
             this.label13.TabIndex = 20;
             this.label13.Text = "Manager Name";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1276,9 +1297,10 @@ namespace standard.master
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label14.Location = new System.Drawing.Point(353, 96);
+            this.label14.Location = new System.Drawing.Point(529, 147);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 18);
+            this.label14.Size = new System.Drawing.Size(194, 28);
             this.label14.TabIndex = 22;
             this.label14.Text = "Manager Phone";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1290,9 +1312,10 @@ namespace standard.master
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label9.Location = new System.Drawing.Point(353, 126);
+            this.label9.Location = new System.Drawing.Point(529, 193);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 18);
+            this.label9.Size = new System.Drawing.Size(87, 28);
             this.label9.TabIndex = 24;
             this.label9.Text = "GSTIN";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1302,10 +1325,11 @@ namespace standard.master
             this.txtOwnerName.BackColor = System.Drawing.Color.White;
             this.txtOwnerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOwnerName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtOwnerName.Location = new System.Drawing.Point(503, 3);
+            this.txtOwnerName.Location = new System.Drawing.Point(754, 5);
+            this.txtOwnerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOwnerName.MaxLength = 50;
             this.txtOwnerName.Name = "txtOwnerName";
-            this.txtOwnerName.Size = new System.Drawing.Size(194, 26);
+            this.txtOwnerName.Size = new System.Drawing.Size(290, 35);
             this.txtOwnerName.TabIndex = 9;
             this.txtOwnerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1314,10 +1338,11 @@ namespace standard.master
             this.txtManagerName.BackColor = System.Drawing.Color.White;
             this.txtManagerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtManagerName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtManagerName.Location = new System.Drawing.Point(503, 63);
+            this.txtManagerName.Location = new System.Drawing.Point(754, 97);
+            this.txtManagerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtManagerName.MaxLength = 50;
             this.txtManagerName.Name = "txtManagerName";
-            this.txtManagerName.Size = new System.Drawing.Size(194, 26);
+            this.txtManagerName.Size = new System.Drawing.Size(290, 35);
             this.txtManagerName.TabIndex = 11;
             this.txtManagerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1326,10 +1351,11 @@ namespace standard.master
             this.txtOwnerPhone.BackColor = System.Drawing.Color.White;
             this.txtOwnerPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOwnerPhone.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtOwnerPhone.Location = new System.Drawing.Point(503, 33);
+            this.txtOwnerPhone.Location = new System.Drawing.Point(754, 51);
+            this.txtOwnerPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOwnerPhone.MaxLength = 50;
             this.txtOwnerPhone.Name = "txtOwnerPhone";
-            this.txtOwnerPhone.Size = new System.Drawing.Size(194, 26);
+            this.txtOwnerPhone.Size = new System.Drawing.Size(290, 35);
             this.txtOwnerPhone.TabIndex = 10;
             this.txtOwnerPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1338,10 +1364,11 @@ namespace standard.master
             this.txtManagerPhone.BackColor = System.Drawing.Color.White;
             this.txtManagerPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtManagerPhone.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtManagerPhone.Location = new System.Drawing.Point(503, 93);
+            this.txtManagerPhone.Location = new System.Drawing.Point(754, 143);
+            this.txtManagerPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtManagerPhone.MaxLength = 50;
             this.txtManagerPhone.Name = "txtManagerPhone";
-            this.txtManagerPhone.Size = new System.Drawing.Size(194, 26);
+            this.txtManagerPhone.Size = new System.Drawing.Size(290, 35);
             this.txtManagerPhone.TabIndex = 12;
             this.txtManagerPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1350,10 +1377,11 @@ namespace standard.master
             this.txtTin.BackColor = System.Drawing.Color.White;
             this.txtTin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTin.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTin.Location = new System.Drawing.Point(503, 123);
+            this.txtTin.Location = new System.Drawing.Point(754, 189);
+            this.txtTin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTin.MaxLength = 50;
             this.txtTin.Name = "txtTin";
-            this.txtTin.Size = new System.Drawing.Size(194, 26);
+            this.txtTin.Size = new System.Drawing.Size(290, 35);
             this.txtTin.TabIndex = 13;
             this.txtTin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1364,9 +1392,10 @@ namespace standard.master
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label16.Location = new System.Drawing.Point(3, 216);
+            this.label16.Location = new System.Drawing.Point(4, 331);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 18);
+            this.label16.Size = new System.Drawing.Size(103, 28);
             this.label16.TabIndex = 14;
             this.label16.Text = "Pincode";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1378,9 +1407,10 @@ namespace standard.master
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label11.Location = new System.Drawing.Point(3, 186);
+            this.label11.Location = new System.Drawing.Point(4, 285);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 18);
+            this.label11.Size = new System.Drawing.Size(57, 28);
             this.label11.TabIndex = 12;
             this.label11.Text = "City";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1392,9 +1422,10 @@ namespace standard.master
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label4.Location = new System.Drawing.Point(3, 156);
+            this.label4.Location = new System.Drawing.Point(4, 239);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 18);
+            this.label4.Size = new System.Drawing.Size(126, 28);
             this.label4.TabIndex = 10;
             this.label4.Text = "Address 2";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1406,9 +1437,10 @@ namespace standard.master
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label17.Location = new System.Drawing.Point(3, 126);
+            this.label17.Location = new System.Drawing.Point(4, 193);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 18);
+            this.label17.Size = new System.Drawing.Size(126, 28);
             this.label17.TabIndex = 8;
             this.label17.Text = "Address 1";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1418,10 +1450,11 @@ namespace standard.master
             this.txtPin.BackColor = System.Drawing.Color.White;
             this.txtPin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPin.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtPin.Location = new System.Drawing.Point(153, 213);
+            this.txtPin.Location = new System.Drawing.Point(229, 327);
+            this.txtPin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPin.MaxLength = 50;
             this.txtPin.Name = "txtPin";
-            this.txtPin.Size = new System.Drawing.Size(194, 26);
+            this.txtPin.Size = new System.Drawing.Size(290, 35);
             this.txtPin.TabIndex = 8;
             this.txtPin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1430,10 +1463,11 @@ namespace standard.master
             this.txtAdd3.BackColor = System.Drawing.Color.White;
             this.txtAdd3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdd3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtAdd3.Location = new System.Drawing.Point(153, 183);
+            this.txtAdd3.Location = new System.Drawing.Point(229, 281);
+            this.txtAdd3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAdd3.MaxLength = 50;
             this.txtAdd3.Name = "txtAdd3";
-            this.txtAdd3.Size = new System.Drawing.Size(194, 26);
+            this.txtAdd3.Size = new System.Drawing.Size(290, 35);
             this.txtAdd3.TabIndex = 7;
             this.txtAdd3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1442,10 +1476,11 @@ namespace standard.master
             this.txtAdd2.BackColor = System.Drawing.Color.White;
             this.txtAdd2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdd2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtAdd2.Location = new System.Drawing.Point(153, 153);
+            this.txtAdd2.Location = new System.Drawing.Point(229, 235);
+            this.txtAdd2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAdd2.MaxLength = 50;
             this.txtAdd2.Name = "txtAdd2";
-            this.txtAdd2.Size = new System.Drawing.Size(194, 26);
+            this.txtAdd2.Size = new System.Drawing.Size(290, 35);
             this.txtAdd2.TabIndex = 6;
             this.txtAdd2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1454,10 +1489,11 @@ namespace standard.master
             this.txtAdd1.BackColor = System.Drawing.Color.White;
             this.txtAdd1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdd1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtAdd1.Location = new System.Drawing.Point(153, 123);
+            this.txtAdd1.Location = new System.Drawing.Point(229, 189);
+            this.txtAdd1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAdd1.MaxLength = 50;
             this.txtAdd1.Name = "txtAdd1";
-            this.txtAdd1.Size = new System.Drawing.Size(194, 26);
+            this.txtAdd1.Size = new System.Drawing.Size(290, 35);
             this.txtAdd1.TabIndex = 5;
             this.txtAdd1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1468,9 +1504,10 @@ namespace standard.master
             this.lblref.BackColor = System.Drawing.Color.Transparent;
             this.lblref.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblref.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lblref.Location = new System.Drawing.Point(3, 96);
+            this.lblref.Location = new System.Drawing.Point(4, 147);
+            this.lblref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblref.Name = "lblref";
-            this.lblref.Size = new System.Drawing.Size(85, 18);
+            this.lblref.Size = new System.Drawing.Size(131, 28);
             this.lblref.TabIndex = 6;
             this.lblref.Text = "Reference";
             this.lblref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1485,9 +1522,10 @@ namespace standard.master
             this.cboReference.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboReference.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.cboReference.FormattingEnabled = true;
-            this.cboReference.Location = new System.Drawing.Point(153, 93);
+            this.cboReference.Location = new System.Drawing.Point(229, 143);
+            this.cboReference.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboReference.Name = "cboReference";
-            this.cboReference.Size = new System.Drawing.Size(194, 26);
+            this.cboReference.Size = new System.Drawing.Size(289, 36);
             this.cboReference.TabIndex = 4;
             this.cboReference.ValueMember = "led_id";
             this.cboReference.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
@@ -1503,10 +1541,11 @@ namespace standard.master
             this.tblEntry.SetColumnSpan(this.lbltamil, 3);
             this.lbltamil.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lbltamil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.lbltamil.Location = new System.Drawing.Point(703, 150);
+            this.lbltamil.Location = new System.Drawing.Point(1054, 230);
+            this.lbltamil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltamil.Name = "lbltamil";
             this.tblEntry.SetRowSpan(this.lbltamil, 2);
-            this.lbltamil.Size = new System.Drawing.Size(347, 58);
+            this.lbltamil.Size = new System.Drawing.Size(520, 88);
             this.lbltamil.TabIndex = 21;
             // 
             // label19
@@ -1516,9 +1555,10 @@ namespace standard.master
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label19.Location = new System.Drawing.Point(703, 126);
+            this.label19.Location = new System.Drawing.Point(1054, 193);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(38, 18);
+            this.label19.Size = new System.Drawing.Size(57, 28);
             this.label19.TabIndex = 36;
             this.label19.Text = "City";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1528,10 +1568,11 @@ namespace standard.master
             this.txtTamilAdd3.BackColor = System.Drawing.Color.White;
             this.txtTamilAdd3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTamilAdd3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTamilAdd3.Location = new System.Drawing.Point(853, 123);
+            this.txtTamilAdd3.Location = new System.Drawing.Point(1279, 189);
+            this.txtTamilAdd3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTamilAdd3.MaxLength = 50;
             this.txtTamilAdd3.Name = "txtTamilAdd3";
-            this.txtTamilAdd3.Size = new System.Drawing.Size(194, 26);
+            this.txtTamilAdd3.Size = new System.Drawing.Size(290, 35);
             this.txtTamilAdd3.TabIndex = 20;
             this.txtTamilAdd3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             this.txtTamilAdd3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTamilAdd3_KeyUp);
@@ -1544,9 +1585,10 @@ namespace standard.master
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label18.Location = new System.Drawing.Point(703, 96);
+            this.label18.Location = new System.Drawing.Point(1054, 147);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 18);
+            this.label18.Size = new System.Drawing.Size(126, 28);
             this.label18.TabIndex = 34;
             this.label18.Text = "Address 2";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1556,10 +1598,11 @@ namespace standard.master
             this.txtTamilAdd2.BackColor = System.Drawing.Color.White;
             this.txtTamilAdd2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTamilAdd2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTamilAdd2.Location = new System.Drawing.Point(853, 93);
+            this.txtTamilAdd2.Location = new System.Drawing.Point(1279, 143);
+            this.txtTamilAdd2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTamilAdd2.MaxLength = 50;
             this.txtTamilAdd2.Name = "txtTamilAdd2";
-            this.txtTamilAdd2.Size = new System.Drawing.Size(194, 26);
+            this.txtTamilAdd2.Size = new System.Drawing.Size(290, 35);
             this.txtTamilAdd2.TabIndex = 19;
             this.txtTamilAdd2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             this.txtTamilAdd2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTamilAdd2_KeyUp);
@@ -1572,9 +1615,10 @@ namespace standard.master
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label5.Location = new System.Drawing.Point(703, 66);
+            this.label5.Location = new System.Drawing.Point(1054, 101);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 18);
+            this.label5.Size = new System.Drawing.Size(126, 28);
             this.label5.TabIndex = 32;
             this.label5.Text = "Address 1";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1584,10 +1628,11 @@ namespace standard.master
             this.txtTamilAdd1.BackColor = System.Drawing.Color.White;
             this.txtTamilAdd1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTamilAdd1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTamilAdd1.Location = new System.Drawing.Point(853, 63);
+            this.txtTamilAdd1.Location = new System.Drawing.Point(1279, 97);
+            this.txtTamilAdd1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTamilAdd1.MaxLength = 50;
             this.txtTamilAdd1.Name = "txtTamilAdd1";
-            this.txtTamilAdd1.Size = new System.Drawing.Size(194, 26);
+            this.txtTamilAdd1.Size = new System.Drawing.Size(290, 35);
             this.txtTamilAdd1.TabIndex = 18;
             this.txtTamilAdd1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             this.txtTamilAdd1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTamilAdd1_KeyUp);
@@ -1600,9 +1645,10 @@ namespace standard.master
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label7.Location = new System.Drawing.Point(703, 36);
+            this.label7.Location = new System.Drawing.Point(1054, 55);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 18);
+            this.label7.Size = new System.Drawing.Size(83, 28);
             this.label7.TabIndex = 30;
             this.label7.Text = "Tamil ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1612,10 +1658,11 @@ namespace standard.master
             this.txtTamilPartyName.BackColor = System.Drawing.Color.White;
             this.txtTamilPartyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTamilPartyName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTamilPartyName.Location = new System.Drawing.Point(853, 33);
+            this.txtTamilPartyName.Location = new System.Drawing.Point(1279, 51);
+            this.txtTamilPartyName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTamilPartyName.MaxLength = 50;
             this.txtTamilPartyName.Name = "txtTamilPartyName";
-            this.txtTamilPartyName.Size = new System.Drawing.Size(194, 26);
+            this.txtTamilPartyName.Size = new System.Drawing.Size(290, 35);
             this.txtTamilPartyName.TabIndex = 17;
             this.txtTamilPartyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             this.txtTamilPartyName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTamilPartyName_KeyUp);
@@ -1634,10 +1681,10 @@ namespace standard.master
             "WHOLE SALE RATE",
             "SPECIAL RATE",
             "SUPER SPECIAL RATE"});
-            this.cboratetype.Location = new System.Drawing.Point(854, 4);
-            this.cboratetype.Margin = new System.Windows.Forms.Padding(4);
+            this.cboratetype.Location = new System.Drawing.Point(1281, 6);
+            this.cboratetype.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cboratetype.Name = "cboratetype";
-            this.cboratetype.Size = new System.Drawing.Size(192, 26);
+            this.cboratetype.Size = new System.Drawing.Size(286, 36);
             this.cboratetype.TabIndex = 16;
             // 
             // label22
@@ -1647,9 +1694,10 @@ namespace standard.master
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label22.Location = new System.Drawing.Point(703, 6);
+            this.label22.Location = new System.Drawing.Point(1054, 9);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(83, 18);
+            this.label22.Size = new System.Drawing.Size(129, 28);
             this.label22.TabIndex = 39;
             this.label22.Text = "Rate Type";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1659,10 +1707,11 @@ namespace standard.master
             this.txtCst.BackColor = System.Drawing.Color.White;
             this.txtCst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCst.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtCst.Location = new System.Drawing.Point(853, 213);
+            this.txtCst.Location = new System.Drawing.Point(1279, 327);
+            this.txtCst.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCst.MaxLength = 50;
             this.txtCst.Name = "txtCst";
-            this.txtCst.Size = new System.Drawing.Size(194, 26);
+            this.txtCst.Size = new System.Drawing.Size(290, 35);
             this.txtCst.TabIndex = 22;
             this.txtCst.Visible = false;
             this.txtCst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
@@ -1674,9 +1723,10 @@ namespace standard.master
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label21.Location = new System.Drawing.Point(703, 216);
+            this.label21.Location = new System.Drawing.Point(1054, 331);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 18);
+            this.label21.Size = new System.Drawing.Size(49, 28);
             this.label21.TabIndex = 26;
             this.label21.Text = "Cst";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1688,9 +1738,10 @@ namespace standard.master
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label12.Location = new System.Drawing.Point(353, 157);
+            this.label12.Location = new System.Drawing.Point(529, 240);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 16);
+            this.label12.Size = new System.Drawing.Size(123, 25);
             this.label12.TabIndex = 28;
             this.label12.Text = "Transport";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1700,10 +1751,11 @@ namespace standard.master
             this.txtTransport.BackColor = System.Drawing.Color.White;
             this.txtTransport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTransport.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTransport.Location = new System.Drawing.Point(503, 153);
+            this.txtTransport.Location = new System.Drawing.Point(754, 235);
+            this.txtTransport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTransport.MaxLength = 50;
             this.txtTransport.Name = "txtTransport";
-            this.txtTransport.Size = new System.Drawing.Size(194, 26);
+            this.txtTransport.Size = new System.Drawing.Size(290, 35);
             this.txtTransport.TabIndex = 14;
             this.txtTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPartyName_KeyDown);
             // 
@@ -1714,9 +1766,10 @@ namespace standard.master
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label23.Location = new System.Drawing.Point(353, 186);
+            this.label23.Location = new System.Drawing.Point(529, 285);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 18);
+            this.label23.Size = new System.Drawing.Size(149, 28);
             this.label23.TabIndex = 28;
             this.label23.Text = "Discount %";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1728,9 +1781,10 @@ namespace standard.master
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(100)))), ((int)(((byte)(151)))));
-            this.label6.Location = new System.Drawing.Point(503, 217);
+            this.label6.Location = new System.Drawing.Point(754, 333);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 16);
+            this.label6.Size = new System.Drawing.Size(0, 24);
             this.label6.TabIndex = 2;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1742,11 +1796,11 @@ namespace standard.master
             this.txtDisPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDisPer.DecimalPlaces = 2;
             this.txtDisPer.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtDisPer.Location = new System.Drawing.Point(504, 184);
-            this.txtDisPer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDisPer.Location = new System.Drawing.Point(756, 282);
+            this.txtDisPer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDisPer.Name = "txtDisPer";
             this.txtDisPer.RightAlign = true;
-            this.txtDisPer.Size = new System.Drawing.Size(192, 26);
+            this.txtDisPer.Size = new System.Drawing.Size(287, 35);
             this.txtDisPer.TabIndex = 15;
             this.txtDisPer.TabStop = false;
             this.txtDisPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1761,20 +1815,21 @@ namespace standard.master
             // 
             this.tblCommand.ColumnCount = 5;
             this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tblCommand.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tblCommand.Controls.Add(this.cmdclose, 4, 0);
             this.tblCommand.Controls.Add(this.btnClear, 3, 0);
             this.tblCommand.Controls.Add(this.btnDelete, 2, 0);
             this.tblCommand.Controls.Add(this.btnSave, 1, 0);
             this.tblCommand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCommand.Location = new System.Drawing.Point(4, 655);
+            this.tblCommand.Location = new System.Drawing.Point(5, 1009);
+            this.tblCommand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblCommand.Name = "tblCommand";
             this.tblCommand.RowCount = 1;
             this.tblCommand.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblCommand.Size = new System.Drawing.Size(1223, 39);
+            this.tblCommand.Size = new System.Drawing.Size(1836, 59);
             this.tblCommand.TabIndex = 3;
             // 
             // cmdclose
@@ -1783,9 +1838,10 @@ namespace standard.master
             this.cmdclose.BackColor = System.Drawing.Color.Transparent;
             this.cmdclose.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.cmdclose.Location = new System.Drawing.Point(1126, 3);
+            this.cmdclose.Location = new System.Drawing.Point(1690, 5);
+            this.cmdclose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdclose.Name = "cmdclose";
-            this.cmdclose.Size = new System.Drawing.Size(90, 30);
+            this.cmdclose.Size = new System.Drawing.Size(135, 49);
             this.cmdclose.TabIndex = 3;
             this.cmdclose.Text = "&Close";
             this.cmdclose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1798,9 +1854,10 @@ namespace standard.master
             this.btnClear.BackColor = System.Drawing.Color.Transparent;
             this.btnClear.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.btnClear.Location = new System.Drawing.Point(1026, 3);
+            this.btnClear.Location = new System.Drawing.Point(1540, 5);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(90, 30);
+            this.btnClear.Size = new System.Drawing.Size(135, 49);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "&Clear";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1813,9 +1870,10 @@ namespace standard.master
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.btnDelete.Location = new System.Drawing.Point(926, 3);
+            this.btnDelete.Location = new System.Drawing.Point(1390, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(90, 30);
+            this.btnDelete.Size = new System.Drawing.Size(135, 49);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1828,9 +1886,10 @@ namespace standard.master
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.btnSave.Location = new System.Drawing.Point(826, 3);
+            this.btnSave.Location = new System.Drawing.Point(1240, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 30);
+            this.btnSave.Size = new System.Drawing.Size(135, 49);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "&Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1839,11 +1898,12 @@ namespace standard.master
             // 
             // frmLedger
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
-            this.ClientSize = new System.Drawing.Size(1231, 698);
+            this.ClientSize = new System.Drawing.Size(1846, 1074);
             this.Controls.Add(this.tblMain);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLedger";
             this.ShowIcon = false;
             this.Text = "Ledger";

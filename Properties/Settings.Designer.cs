@@ -12,7 +12,7 @@ namespace standard.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace standard.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PANDI-PC;Initial Catalog=EasyInv;Persist Security Info=True;User ID=s" +
-            "a;Password=3802")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IFOX\\IFOXSQLSERVER;Initial Catalog=EasyInv;Persist Security Info=True" +
+            ";User ID=sa;Password=112233")]
         public string constr {
             get {
                 return ((string)(this["constr"]));
@@ -37,7 +37,7 @@ namespace standard.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PANDI-PC\\BLUEWINGS;Initial Catalog=Easyinv;Persist Security Info=True" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IFOX\\IFOXSQLSERVER;Initial Catalog=Easyinv;Persist Security Info=True" +
             ";User ID=sa")]
         public string EasyinvConnectionString {
             get {

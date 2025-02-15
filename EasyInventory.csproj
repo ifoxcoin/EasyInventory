@@ -61,13 +61,29 @@
     <Reference Include="EntityFramework">
       <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\EXE\EXE\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\EXE\EXE\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="mylib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,6 +134,11 @@
       <DependentUpon>Inventory.dbml</DependentUpon>
     </Compile>
     <Compile Include="classes\tamil.cs" />
+    <Compile Include="EasyInvDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyInvDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +228,9 @@
     <Compile Include="trans\frmItemlist.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="trans\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="trans\frmPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +251,13 @@
     <EmbeddedResource Include="report\rptLedgerItemDetail.rdlc" />
     <EmbeddedResource Include="report\rptLedger.rdlc" />
     <EmbeddedResource Include="report\rptItem.rdlc" />
+    <EmbeddedResource Include="report\rptLedgerOS.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptLedgersOutstanding.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptLedgersOutstandingedited.rdlc" />
     <EmbeddedResource Include="report\rptOutstanding.rdlc" />
     <EmbeddedResource Include="report\frmStockRpt.resx">
       <DependentUpon>frmStockRpt.cs</DependentUpon>
@@ -253,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trans\frmItemlist.resx">
       <DependentUpon>frmItemlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trans\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trans\frmPurchase.resx">
       <DependentUpon>frmPurchase.cs</DependentUpon>
@@ -326,7 +360,20 @@
       <LastGenOutput>Inventory.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="EasyInvDataSet.xsc">
+      <DependentUpon>EasyInvDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EasyInvDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EasyInvDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EasyInvDataSet.xss">
+      <DependentUpon>EasyInvDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\standard.classes.packingreceipt.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_commissionreceiptSelectResult.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_itemSelectResult1.datasource" />
@@ -356,7 +403,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="report\rptLedgersOutstanding.rdlc" />
     <None Include="Resources\delete.gif" />
   </ItemGroup>
   <ItemGroup>
