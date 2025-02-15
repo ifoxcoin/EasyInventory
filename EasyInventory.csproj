@@ -240,6 +240,12 @@
     <Compile Include="trans\frmSales.cs">
       <SubType>Form</SubType>
     </Compile>
+    <None Include="bin\Debug\07july2020.bak" />
+    <None Include="bin\Debug\appExp.dat" />
+    <None Include="bin\Debug\standard.exe.config" />
+    <None Include="bin\Debug\standard.vshost.exe.Config" />
+    <None Include="bin\Debug\standard.vshost.exe.manifest" />
+    <None Include="bin\x86\Debug\EasyInventory.exe.config" />
     <None Include="classes\Inventory.dbml.layout">
       <DependentUpon>Inventory.dbml</DependentUpon>
     </None>
@@ -415,6 +421,33 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\easyinvChanges.sql" />
+    <Content Include="bin\Debug\EasyInventory.pdb" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\mylib.dll" />
+    <Content Include="bin\Debug\mymain.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\standard.exe" />
+    <Content Include="bin\Debug\standard.pdb" />
+    <Content Include="bin\Debug\standard.vshost.exe" />
+    <Content Include="bin\Debug\System.Windows.Forms.Ribbon35.dll" />
+    <Content Include="bin\x86\Debug\EasyInventory.exe" />
+    <Content Include="bin\x86\Debug\EasyInventory.pdb" />
+    <Content Include="bin\x86\Debug\EntityFramework.dll" />
+    <Content Include="bin\x86\Debug\EntityFramework.xml" />
+    <Content Include="bin\x86\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\x86\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\x86\Debug\Microsoft.ReportViewer.WinForms.xml" />
+    <Content Include="bin\x86\Debug\mylib.dll" />
+    <Content Include="bin\x86\Debug\mymain.dll" />
+    <Content Include="bin\x86\Debug\System.Windows.Forms.Ribbon35.dll" />
     <Content Include="Clock.ico" />
     <None Include="Resources\56_32x32.png" />
     <None Include="Resources\help.png" />
@@ -442,7 +475,10 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="bin\x86\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
