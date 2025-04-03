@@ -441,7 +441,7 @@
             // ribbonPanel9
             // 
             this.ribbonPanel9.Items.Add(this.btnReceiptRpt);
-            this.ribbonPanel9.Text = "Ledger Outstanding";
+            this.ribbonPanel9.Text = "Customer Outstanding";
             // 
             // btnReceiptRpt
             // 

@@ -467,7 +467,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!pm_paid.Value, "DataSet1")</Value>
+                              <Value>=Fields!pm_paid.Value</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
                               </Style>
@@ -501,7 +501,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Sum(Fields!pm_totamount.Value, "DataSet1")-Sum(Fields!pm_paid.Value, "DataSet1"))</Value>
+                              <Value>=Fields!pm_totamount.Value-Fields!pm_paid.Value</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
                               </Style>
@@ -683,6 +683,7 @@
                               <Value>=Microsoft.VisualBasic.Strings.FormatNumber(SUM(Fields!pm_totamount.Value), 2)</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -717,6 +718,7 @@
                               <Value>=Sum(Fields!pm_paid.Value)</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -748,9 +750,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=sum(Fields!pm_totamount.Value)-sum(Fields!pm_paid.Value)</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -819,7 +822,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!led_name.Value, "DataSet1")</Value>
+                <Value>=First(Fields!led_name.Value, "DataSet2")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -851,7 +854,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!led_address2.Value, "DataSet1")</Value>
+                <Value>=First(Fields!led_address2.Value, "DataSet2")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1150,6 +1153,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>864b05a3-1800-4e63-ae0d-f4f6a76bb71a</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="standardclasses1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>8198d66d-7ad7-4d35-8048-80d9239cf751</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
@@ -1258,6 +1268,131 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>usp_purchasemasterSelectTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>standardclasses1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="com_id">
+          <DataField>com_id</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="com_name">
+          <DataField>com_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_accountcode">
+          <DataField>led_accountcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_accounttype">
+          <DataField>led_accounttype</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_address">
+          <DataField>led_address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_address1">
+          <DataField>led_address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_address2">
+          <DataField>led_address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_agid">
+          <DataField>led_agid</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="led_cst">
+          <DataField>led_cst</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_disper">
+          <DataField>led_disper</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="led_id">
+          <DataField>led_id</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="led_managername">
+          <DataField>led_managername</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_managerphone">
+          <DataField>led_managerphone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_name">
+          <DataField>led_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_ownername">
+          <DataField>led_ownername</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_ownerphone">
+          <DataField>led_ownerphone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_pincode">
+          <DataField>led_pincode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_ratetype">
+          <DataField>led_ratetype</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_refno">
+          <DataField>led_refno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_taddress">
+          <DataField>led_taddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_taddress1">
+          <DataField>led_taddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_taddress2">
+          <DataField>led_taddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_tin">
+          <DataField>led_tin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_tname">
+          <DataField>led_tname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_transport">
+          <DataField>led_transport</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="led_udate">
+          <DataField>led_udate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="users_name">
+          <DataField>users_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="users_uid">
+          <DataField>users_uid</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>standard.classes</rd:DataSetName>
+        <rd:TableName>usp_ledgermasterSelectResult</rd:TableName>
+        <rd:ObjectDataSourceType>standard.classes.usp_ledgermasterSelectResult, classes.Inventory.designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -336,7 +336,7 @@ namespace standard.trans
 					select x;
 				ledgermasterCityBindingSource.DataSource = source.Select(x => x.led_address2).Distinct();
 				ledgermasteCityViewrBindingSource.DataSource = source.Select(x => x.led_address2).Distinct();
-				usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, null, null, null, null);
+				usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, null, null, null, null, null);
 				cbopurfrom.SelectedIndex = -1;
 				List<usp_itemSelectResult> list = inventoryDataContext.usp_itemSelect(null, null, null,null).ToList();
 				AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
@@ -431,6 +431,7 @@ namespace standard.trans
 							purchasemaster.pm_date = dtppurdate.Value;
 							purchasemaster.pm_desc = "";
 							purchasemaster.pm_id = 1L;
+                            purchasemaster.pm_paid = 0;
 							if (id == 0)
 							{
 								long? no = 0L;
@@ -514,7 +515,7 @@ namespace standard.trans
 				if (MessageBox.Show("Are you sure to Print Bill?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
 				{
 					InventoryDataContext inventoryDataContext = new InventoryDataContext();
-					ISingleResult<usp_purchasemasterSelectResult> singleResult = inventoryDataContext.usp_purchasemasterSelect(smid, null, null, null, null);
+					ISingleResult<usp_purchasemasterSelectResult> singleResult = inventoryDataContext.usp_purchasemasterSelect(smid, null, null, null, null, null);
 					foreach (usp_purchasemasterSelectResult item in singleResult)
 					{
 						int? num6 = 1;
@@ -561,7 +562,7 @@ namespace standard.trans
 					list.Add(new ReportParameter("mi_netamt", amount.ToString("0.00")));
 					frmRpt frmRpt = new frmRpt();
 					frmRpt.WindowState = FormWindowState.Maximized;
-					ISingleResult<usp_purchasemasterSelectResult> dataSourceValue = inventoryDataContext.usp_purchasemasterSelect(smid, null, null, null, null);
+					ISingleResult<usp_purchasemasterSelectResult> dataSourceValue = inventoryDataContext.usp_purchasemasterSelect(smid, null, null, null, null, null);
 					ISingleResult<usp_purchasedetailsSelectResult> dataSourceValue2 = inventoryDataContext.usp_purchasedetailsSelect(smid, null, null, null, null, null);
 					frmRpt.reportview.RefreshReport();
 					frmRpt.reportview.LocalReport.ReportEmbeddedResource = "standard.report.purinv.rdlc";
@@ -848,11 +849,11 @@ namespace standard.trans
 				InventoryDataContext inventoryDataContext = new InventoryDataContext();
 				if (txtSearchBillNo.Text == string.Empty)
 				{
-					usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, Convert.ToInt32(cboSupplierView.SelectedValue), dtpfdate.Value.Date, dtptdate.Value.Date, null);
+					usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, Convert.ToInt32(cboSupplierView.SelectedValue), dtpfdate.Value.Date, dtptdate.Value.Date, null, null);
 				}
 				else
 				{
-					usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, null, null, null, Convert.ToInt64(txtSearchBillNo.Text));
+					usppurchasemasterSelectResultBindingSource.DataSource = inventoryDataContext.usp_purchasemasterSelect(null, null, null, null, null, Convert.ToInt64(txtSearchBillNo.Text));
 				}
 			}
 			catch (Exception ex)
@@ -875,7 +876,7 @@ namespace standard.trans
 			int num = Convert.ToInt32(dglist["pmidDataGridViewTextBoxColumn", dglist.CurrentRow.Index].Value);
 			id = num;
 			InventoryDataContext inventoryDataContext = new InventoryDataContext();
-			ISingleResult<usp_purchasemasterSelectResult> singleResult = inventoryDataContext.usp_purchasemasterSelect(num, null, null, null, null);
+			ISingleResult<usp_purchasemasterSelectResult> singleResult = inventoryDataContext.usp_purchasemasterSelect(num, null, null, null, null, null);
 			using (IEnumerator<usp_purchasemasterSelectResult> enumerator = singleResult.GetEnumerator())
 			{
 				if (enumerator.MoveNext())

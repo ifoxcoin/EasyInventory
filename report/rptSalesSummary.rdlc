@@ -238,7 +238,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <BackgroundColor>LimeGreen</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -274,7 +274,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <BackgroundColor>Red</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -499,7 +499,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Sum(Fields!sm_netamount.Value, "DataSet1")- Sum(Fields!sm_received.Value, "DataSet1"))</Value>
+                              <Value>=Fields!sm_totamount.Value-Fields!sm_received.Value</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
                               </Style>
@@ -743,7 +743,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!sm_totamount.Value)-Sum(Fields!sm_received.Value)</Value>
                               <Style>
                                 <FontFamily>tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>

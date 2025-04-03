@@ -593,15 +593,20 @@ namespace standard
             if (MessageBox.Show("Are you sure to reset? 'it will delete all data ' ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 return;
             classes.InventoryDataContext db = new classes.InventoryDataContext();
-            //var obdata = db.usp_openingbalanceSelect(null, null, null, null, null, null);
-            //foreach (var obitem in obdata)
-            //{
-            //    db.usp_openingbalanceDelete(obitem.ob_id);
-            //}
-                var smdata = db.usp_salesmasterSelect(null, null, null, null, null, null);
+            var obdata = db.usp_openingbalanceSelect(null, null, null, null, true, null);
+            foreach (var obitem in obdata)
+            {
+                db.usp_openingbalanceDelete(obitem.ob_id);
+            }
+            var smdata = db.usp_salesmasterSelect(null, null, null, null, false, null);
             foreach(var smitem in smdata)
             {
                 db.usp_openingbalanceInsert("O", smitem.sm_refno, DateTime.Now.Date, smitem.led_id, smitem.sm_totamount, smitem.sm_profit, smitem.sm_disamount, smitem.sm_packingcharge, smitem.sm_netamount, smitem.sm_received, smitem.sm_isclose, smitem.users_uid, DateTime.Now.Date, smitem.sm_desc, smitem.sm_paidcommission, smitem.sm_paidcommission, smitem.sm_iscommissionclose, smitem.sm_ispackingclose, smitem.sm_taxamount, smitem.sm_taxpercentage, smitem.sm_roundamount);
+            }
+            var pmdata = db.usp_purchasemasterSelect(null, null, null, null, false, null);
+            foreach (var pmitem in pmdata)
+            {
+                db.usp_openingbalanceInsert("O", pmitem.pm_no, pmitem.pm_date, pmitem.led_id, pmitem.pm_totamount, 0, 0, 0, pmitem.pm_totamount, pmitem.pm_paid, pmitem.pm_isclose, pmitem.users_uid, DateTime.Now.Date, pmitem.pm_desc, 0, 0, null, null, 0, 0, 0);
             }
             db.usp_ResetTransaction();
             MessageBox.Show("your application will restart to take effect...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

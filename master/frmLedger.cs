@@ -1682,7 +1682,7 @@ namespace standard.master
             "SPECIAL RATE",
             "SUPER SPECIAL RATE"});
             this.cboratetype.Location = new System.Drawing.Point(1281, 6);
-            this.cboratetype.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboratetype.Margin = new System.Windows.Forms.Padding(6);
             this.cboratetype.Name = "cboratetype";
             this.cboratetype.Size = new System.Drawing.Size(286, 36);
             this.cboratetype.TabIndex = 16;
@@ -1797,7 +1797,7 @@ namespace standard.master
             this.txtDisPer.DecimalPlaces = 2;
             this.txtDisPer.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtDisPer.Location = new System.Drawing.Point(756, 282);
-            this.txtDisPer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtDisPer.Margin = new System.Windows.Forms.Padding(6);
             this.txtDisPer.Name = "txtDisPer";
             this.txtDisPer.RightAlign = true;
             this.txtDisPer.Size = new System.Drawing.Size(287, 35);

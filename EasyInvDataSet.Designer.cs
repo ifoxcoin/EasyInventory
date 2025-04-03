@@ -3875,7 +3875,7 @@ SELECT pm_id, pm_no, pm_date, led_id, pm_totqty, pm_totamount, pm_isclose, com_i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::standard.Properties.Settings.Default.EasyinvConnectionString;
+            this._connection.ConnectionString = global::standard.Properties.Settings.Default.constr;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4440,7 +4440,7 @@ SELECT pm_id, pm_no, pm_date, led_id, pm_totqty, pm_totamount, pm_isclose, com_i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::standard.Properties.Settings.Default.EasyinvConnectionString;
+            this._connection.ConnectionString = global::standard.Properties.Settings.Default.constr;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4800,7 +4800,7 @@ SELECT pm_id, pm_no, pm_date, led_id, pm_totqty, pm_totamount, pm_isclose, com_i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::standard.Properties.Settings.Default.EasyinvConnectionString;
+            this._connection.ConnectionString = global::standard.Properties.Settings.Default.constr;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5057,7 +5057,7 @@ SELECT pm_id, pm_no, pm_date, led_id, pm_totqty, pm_totamount, pm_isclose, com_i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::standard.Properties.Settings.Default.EasyinvConnectionString;
+            this._connection.ConnectionString = global::standard.Properties.Settings.Default.constr;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5281,7 +5281,7 @@ SELECT pm_id, pm_no, pm_date, led_id, pm_totqty, pm_totamount, pm_isclose, com_i
         private void InitCommandCollection() {
             this._commandCollection = new global::System.Data.IDbCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::standard.Properties.Settings.Default.EasyinvConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::standard.Properties.Settings.Default.constr);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.usp_purchasemasterDelete";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
