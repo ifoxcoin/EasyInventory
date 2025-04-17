@@ -210,7 +210,7 @@ namespace standard.trans
 			dtptdate.MinDate = global.fdate;
 			dtptdate.MaxDate = global.sysdate;
 			TimeSpan value = new TimeSpan(30, 0, 0, 0, 0);
-			dtpfdate.Value = dtpfdate.Value.Subtract(value);
+			dtpfdate.Value = dtprecdate.Value.Subtract(value);
 			InventoryDataContext inventoryDataContext = new InventoryDataContext();
 			using (inventoryDataContext)
 			{

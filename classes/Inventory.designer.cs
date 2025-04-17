@@ -1033,6 +1033,13 @@ namespace standard.classes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ob_id, led_id, fdate, tdate, isClose, ob_refno);
 			return ((ISingleResult<usp_openingbalanceSelectResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_SupplierOutstandingRpt")]
+		public ISingleResult<usp_SupplierOutstandingRptResult> usp_SupplierOutstandingRpt([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> led_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fdate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> tdate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), led_id, fdate, tdate);
+			return ((ISingleResult<usp_SupplierOutstandingRptResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.category")]
@@ -22941,6 +22948,140 @@ namespace standard.classes
 				if ((this._ob_roundamount != value))
 				{
 					this._ob_roundamount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class usp_SupplierOutstandingRptResult
+	{
+		
+		private long _ID;
+		
+		private string _LedgerName;
+		
+		private System.Nullable<System.DateTime> _TransactionDate;
+		
+		private long _BillNo;
+		
+		private decimal _BillAmount;
+		
+		private decimal _Paid;
+		
+		private string _Type;
+		
+		public usp_SupplierOutstandingRptResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="BigInt NOT NULL")]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LedgerName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string LedgerName
+		{
+			get
+			{
+				return this._LedgerName;
+			}
+			set
+			{
+				if ((this._LedgerName != value))
+				{
+					this._LedgerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TransactionDate
+		{
+			get
+			{
+				return this._TransactionDate;
+			}
+			set
+			{
+				if ((this._TransactionDate != value))
+				{
+					this._TransactionDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillNo", DbType="BigInt NOT NULL")]
+		public long BillNo
+		{
+			get
+			{
+				return this._BillNo;
+			}
+			set
+			{
+				if ((this._BillNo != value))
+				{
+					this._BillNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillAmount", DbType="Decimal(18,3) NOT NULL")]
+		public decimal BillAmount
+		{
+			get
+			{
+				return this._BillAmount;
+			}
+			set
+			{
+				if ((this._BillAmount != value))
+				{
+					this._BillAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paid", DbType="Decimal(12,2) NOT NULL")]
+		public decimal Paid
+		{
+			get
+			{
+				return this._Paid;
+			}
+			set
+			{
+				if ((this._Paid != value))
+				{
+					this._Paid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(14) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
 				}
 			}
 		}

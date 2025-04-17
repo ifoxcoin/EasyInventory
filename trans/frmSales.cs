@@ -9,8 +9,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Common;
 using System.Data.Linq;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace standard.trans
@@ -400,7 +403,7 @@ namespace standard.trans
             dtpsaldate.MaxDate = global.sysdate;
             dtpsaldate.Value = global.sysdate;
             TimeSpan value = new TimeSpan(30, 0, 0, 0, 0);
-            dtpfdate.Value = dtpfdate.Value.Subtract(value);
+            dtpfdate.Value = dtpsaldate.Value.Subtract(value);
             InventoryDataContext inventoryDataContext = new InventoryDataContext();
             using (inventoryDataContext)
             {
@@ -966,6 +969,35 @@ namespace standard.trans
                     frmRpt.reportview.LocalReport.Refresh();
                     frmRpt.reportview.RefreshReport();
                     frmRpt.ShowDialog();
+
+                    byte[] reportBytes = frmRpt.reportview.LocalReport.Render("PDF");
+
+                    string downloadsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                    string todayDate = DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss");
+                    string Name = cboissueto.Text.Trim();
+                    string baseFileName = cboCity.Text + "_" + Name + "_" + todayDate + "_" + "receipt";
+                    string pdfFilePath = Path.Combine(downloadsPath, baseFileName + ".pdf");
+
+                    File.WriteAllBytes(pdfFilePath, reportBytes);
+
+                    //frmRpt.ShowDialog();
+
+                    // Ask to send via WhatsApp
+                    DialogResult result = MessageBox.Show("Do you want to send this bill via WhatsApp?", "Send to WhatsApp", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        int ledgerId = Convert.ToInt32(cboissueto.SelectedValue);
+                        string customerPhone = GetCustomerPhoneNumber(ledgerId);
+
+                        if (!string.IsNullOrEmpty(customerPhone))
+                        {
+                            SendViaWhatsApp(customerPhone, pdfFilePath);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Customer phone number not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
@@ -3212,6 +3244,34 @@ namespace standard.trans
             ((System.ComponentModel.ISupportInitialize)(this.ledgermasteCityViewrBindingSource)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private string GetCustomerPhoneNumber(int ledgerId)
+        {
+            using (InventoryDataContext db = new InventoryDataContext())
+            {
+                var phone = db.ledgermasters
+                             .Where(a => a.led_id == ledgerId)
+                             .Select(a => a.led_ownerphone)
+                             .FirstOrDefault(); // Get the first matching record or null
+
+                return phone ?? ""; // Return empty string if null
+            }
+        }
+
+        private void SendViaWhatsApp(string phoneNumber, string filePath)
+        {
+            string message = "Hello, please find your receipt attached.";
+
+            // Open WhatsApp with a pre-filled message
+            string whatsappUrl = $"https://web.whatsapp.com/send?phone={phoneNumber}&text={Uri.EscapeDataString(message)}";
+            Process.Start(new ProcessStartInfo(whatsappUrl) { UseShellExecute = true });
+
+            // Wait a few seconds for WhatsApp Web/Desktop to open
+            Thread.Sleep(5000);
+
+            // Open the file dialog for the user to manually attach the file
+            Process.Start("explorer.exe", filePath);
         }
     }
 }

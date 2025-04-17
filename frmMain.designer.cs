@@ -78,7 +78,9 @@
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.btnStock = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanelSupplierOS = new System.Windows.Forms.RibbonPanel();
             this.btnReceiptRpt = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierOutstanding = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnLedgerReport = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
@@ -377,6 +379,7 @@
             this.ribbonreport.Panels.Add(this.ribbonPanel4);
             this.ribbonreport.Panels.Add(this.ribbonPanel1);
             this.ribbonreport.Panels.Add(this.ribbonPanel9);
+            this.ribbonreport.Panels.Add(this.ribbonPanelSupplierOS);
             this.ribbonreport.Panels.Add(this.ribbonPanel11);
             this.ribbonreport.Panels.Add(this.ribbonPanel12);
             this.ribbonreport.Panels.Add(this.ribbonPanelMaster);
@@ -441,13 +444,29 @@
             // ribbonPanel9
             // 
             this.ribbonPanel9.Items.Add(this.btnReceiptRpt);
-            this.ribbonPanel9.Text = "Customer Outstanding";
+            this.ribbonPanel9.Text = "CustomerOS";
+
+            // 
+            // ribbonPanelSupplierOS
+            // 
+            this.ribbonPanelSupplierOS.Items.Add(this.btnSupplierOutstanding);
+            this.ribbonPanelSupplierOS.Text = "SupplierOS";
             // 
             // btnReceiptRpt
             // 
             this.btnReceiptRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnReceiptRpt.Image")));
             this.btnReceiptRpt.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnReceiptRpt.SmallImage")));
             this.btnReceiptRpt.Click += new System.EventHandler(this.btnReceiptRpt_Click);
+
+            // 
+            // btnSupplierOutstanding
+            // 
+            this.btnSupplierOutstanding.Image = global::standard.Properties.Resources.PaymentRpt;
+            this.btnSupplierOutstanding.SmallImage = global::standard.Properties.Resources.PaymentRpt;
+            //this.btnSupplierOutstanding.Text = "Supplier";
+            this.btnSupplierOutstanding.Click += new System.EventHandler(this.btnSupplierOutstanding_Click);
+
+
             // 
             // ribbonPanel11
             // 
@@ -619,6 +638,7 @@
         private System.Windows.Forms.RibbonButton btnSalesReport;
         private System.Windows.Forms.RibbonButton btnReceiptReport;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
+        private System.Windows.Forms.RibbonPanel ribbonPanelSupplierOS;
         private System.Windows.Forms.RibbonButton btnReceiptRpt;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonButton btnLedgerReport;
@@ -638,6 +658,7 @@
         private System.Windows.Forms.RibbonPanel pnlPayment;
         private System.Windows.Forms.RibbonButton btnPayment;
         private System.Windows.Forms.RibbonTab ribbonreport1;
+        private System.Windows.Forms.RibbonButton btnSupplierOutstanding;
     }
 }
 

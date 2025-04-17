@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -97,7 +98,7 @@ namespace standard.report
 
 
             }
-            if (_ReportName == "Receipt Report" || _ReportName == "Outstanding Report" || _ReportName == "Ledger Outstanding Report")
+            if (_ReportName == "Receipt Report" || _ReportName == "Outstanding Report" || _ReportName == "Ledger Outstanding Report" ||_ReportName == "Supplier Outstanding Report")
             {
                 chkIsSummary.Visible = false;
                 lblPartyType.Visible = false;
@@ -109,8 +110,11 @@ namespace standard.report
                 btnClear.Visible = false;
                 cboCityName.Visible = false;
                 lblCityName.Visible = false;
-                //btnSend.Visible = true;
                 dtpfdate.Select();
+            }
+            if (_ReportName == "Ledger Outstanding Report" || _ReportName == "Supplier Outstanding Report")
+            {
+                btnSend.Visible = true;
             }
             else if (_ReportName == "Ledger Report")
             {
@@ -198,6 +202,11 @@ namespace standard.report
             {
                 this.Text = "Ledger Outstanding Report";
                 lbltitle.Text = "Ledger Outstanding Report";
+            }
+            else if (_ReportName == "Supplier Outstanding Report")
+            {
+                this.Text = "Supplier Outstanding Report";
+                lbltitle.Text = "Supplier Outstanding Report";
             }
             else if (_ReportName == "Outstanding Report")
             {
@@ -313,6 +322,28 @@ namespace standard.report
                     reportViewer1.LocalReport.DataSources.Add(reportsource);
                     reportViewer1.LocalReport.DataSources.Add(reportsource_Ledger);
                 }
+
+                else if (_ReportName == "Supplier Outstanding Report")
+                {
+
+                    if (cboCity.Text == "" || cboName.Text == "")
+                    {
+                        MessageBox.Show("Please Select any PartyName...");
+                        return;
+                    }
+                    //List<ReportParameter> rparam = new List<ReportParameter>();
+                    //rparam.Add(new ReportParameter("city", cboCity.Text));
+                    //rparam.Add(new ReportParameter("partyname", cboName.Text));
+                    reportViewer1.RefreshReport();
+                    var data = db.usp_SupplierOutstandingRpt(ledid, dtpfdate.Value, dtptdate.Value);
+                    var ledgerData = db.usp_ledgermasterSelect(ledid, null, null, null, null);
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptSupplierOutstanding.rdlc";
+                    //reportViewer1.LocalReport.SetParameters(rparam);
+                    ReportDataSource reportsource = new ReportDataSource("DataSet1", data.ToList());
+                    ReportDataSource reportsource_Ledger = new ReportDataSource("DataSet2", ledgerData.ToList());
+                    reportViewer1.LocalReport.DataSources.Add(reportsource);
+                    reportViewer1.LocalReport.DataSources.Add(reportsource_Ledger);
+                }
                 else if (_ReportName == "AgentCommission Report")
                 {
                     var data = db.usp_AgentComissionReport(ledid, null, null);
@@ -406,9 +437,10 @@ namespace standard.report
 
         private void cboCity_SelectedValueChanged_1(object sender, EventArgs e)
         {
+            reportViewer1.Reset();
             //if (cboPartyType.Text.Trim().ToUpper() != "CUSTOMER")
             //{
-                lblReference.Visible = false;
+            lblReference.Visible = false;
                 cboReference.Visible = false;
 
             //}
@@ -472,6 +504,26 @@ namespace standard.report
                     var sup = from a in db.ledgermasters
                                   //orderby a.led_name
                               where ((a.led_address2 == cboCity.Text.ToString()) && (a.led_accounttype == "Customer"))
+                              select new { a.led_id, a.led_name };
+                    cboName.DataSource = sup;
+                    cboName.DisplayMember = "led_name";
+                    cboName.ValueMember = "led_id";
+                    partyautocompletelist.Clear();
+                    foreach (var li in sup)
+                    {
+                        partyautocompletelist.Add(li.led_name);
+                    }
+
+                    cboName.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    cboName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+
+                else if (_ReportName == "Supplier Outstanding Report")
+                {
+                    //ledgermasterBindingSource.Clear();
+                    var sup = from a in db.ledgermasters
+                                  //orderby a.led_name
+                              where (a.led_address2 == cboCity.Text.ToString() && (a.led_accounttype == "Supplier"))
                               select new { a.led_id, a.led_name };
                     cboName.DataSource = sup;
                     cboName.DisplayMember = "led_name";
@@ -587,26 +639,92 @@ namespace standard.report
         private void cboName_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_ReportName == "Agent Outstanding Report")
-            { 
+            {
                 using (InventoryDataContext inventoryDataContext = new InventoryDataContext())
                 {
-                int? num = Convert.ToInt32(cboName.SelectedValue);
+                    int? num = Convert.ToInt32(cboName.SelectedValue);
 
-                if (num == 0)
-                {
-                    num = null;
-                }
+                    if (num == 0)
+                    {
+                        num = null;
+                    }
 
-                // Get distinct city names
-                var cityList = inventoryDataContext.usp_ledgermasterSelect(null, null, null, null, num)
-                                  .Select(x => x.led_address2) // Select only city names
-                                  .Distinct()  // Remove duplicates
-                                  .ToList();
+                    // Get distinct city names
+                    var cityList = inventoryDataContext.usp_ledgermasterSelect(null, null, null, null, num)
+                                      .Select(x => x.led_address2) // Select only city names
+                                      .Distinct()  // Remove duplicates
+                                      .ToList();
 
-                cboCityName.DataSource = cityList;
+                    cboCityName.DataSource = cityList;
                 }
             }
+            else 
+            {
+                reportViewer1.Reset();
+            }
+        }
 
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+           if (reportViewer1.LocalReport.DataSources.Count < 2)
+            {
+                MessageBox.Show("You have not loaded the report!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            { 
+            byte[] reportBytes = reportViewer1.LocalReport.Render("PDF"); // Get report as PDF bytes
+
+            // Get the user's Downloads folder
+            string downloadsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+            string todayDate = DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss");
+            string Name = cboName.Text.Trim();
+            string baseFileName = cboCity.Text + "_" + Name + "_" + todayDate + "_" + "receipt";
+            string pdfFilePath = Path.Combine(downloadsPath, baseFileName + ".pdf");
+
+            File.WriteAllBytes(pdfFilePath, reportBytes);
+
+            int ledgerId =Convert.ToInt32( cboName.SelectedValue);
+            // Fetch the phone number from Ledger Master based on the current report
+            string customerPhone = GetCustomerPhoneNumber(ledgerId);
+
+            if (!string.IsNullOrEmpty(customerPhone))
+            {
+                SendViaWhatsApp(customerPhone, pdfFilePath); // Send the temp file with the fetched phone number
+            }
+            else
+            {
+                MessageBox.Show("Customer phone number not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
+        }
+
+        private string GetCustomerPhoneNumber(int ledgerId)
+        {
+            using (InventoryDataContext db = new InventoryDataContext())
+            {
+                var phone = db.ledgermasters
+                             .Where(a => a.led_id == ledgerId)
+                             .Select(a => a.led_ownerphone)
+                             .FirstOrDefault(); // Get the first matching record or null
+
+                return phone ?? ""; // Return empty string if null
+            }
+        }
+
+        private void SendViaWhatsApp(string phoneNumber, string filePath)
+        {
+            string message = "Hello, please find your receipt attached.";
+
+            // Open WhatsApp with a pre-filled message
+            string whatsappUrl = $"https://api.whatsapp.com/send?phone={phoneNumber}&text={Uri.EscapeDataString(message)}";
+            Process.Start(new ProcessStartInfo(whatsappUrl) { UseShellExecute = true });
+
+            // Wait a few seconds for WhatsApp Web/Desktop to open
+            Thread.Sleep(5000);
+
+            // Open the file dialog for the user to manually attach the file
+            Process.Start("explorer.exe", filePath);
         }
     }
 }

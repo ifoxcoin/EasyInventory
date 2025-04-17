@@ -281,6 +281,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptAddPrint.rdlc" />
     <EmbeddedResource Include="report\rptPurchaseSummary.rdlc" />
+    <EmbeddedResource Include="report\rptSupplierOutstanding.rdlc" />
     <EmbeddedResource Include="report\salinv.rdlc" />
     <EmbeddedResource Include="trans\frmPackingReceipt.resx">
       <DependentUpon>frmPackingReceipt.cs</DependentUpon>
@@ -388,6 +389,7 @@
     <None Include="Properties\DataSources\standard.classes.usp_LedgerOutstandingRptResult.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_LedgerwiseOutstandingReportResult.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_OutstandingReportResult.datasource" />
+    <None Include="Properties\DataSources\standard.classes.usp_SupplierOutstandingRptResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -449,6 +451,7 @@
     <Content Include="bin\x86\Debug\mymain.dll" />
     <Content Include="bin\x86\Debug\System.Windows.Forms.Ribbon35.dll" />
     <Content Include="Clock.ico" />
+    <None Include="Resources\PaymentRpt.png" />
     <None Include="Resources\56_32x32.png" />
     <None Include="Resources\help.png" />
     <None Include="Resources\loginpic.jpg" />
@@ -478,6 +481,9 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="bin\x86\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

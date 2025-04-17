@@ -535,7 +535,7 @@
                                   <Value>Total</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>LimeGreen</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -568,7 +568,7 @@
                                   <Value>=Sum(Fields!BillAmount.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>LimeGreen</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -603,7 +603,7 @@
                                   <Value>=Sum(Fields!Received.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>LimeGreen</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -709,7 +709,7 @@
                                   <Value>Balance</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>SeaGreen</Color>
+                                    <Color>Red</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -744,7 +744,7 @@
                                   <Value>=Format(sum(Fields!BillAmount.Value)-sum(Fields!Received.Value),"N2")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>SeaGreen</Color>
+                                    <Color>Red</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
