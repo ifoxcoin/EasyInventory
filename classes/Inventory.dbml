@@ -386,25 +386,6 @@
       <Association Name="user_purchasemaster" Member="user" ThisKey="users_uid" OtherKey="users_uid" Type="user" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.usp_AgentComissionReport" Method="usp_AgentComissionReport">
-    <Parameter Name="agent_id" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="fdate" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="tdate" Type="System.DateTime" DbType="Date" />
-    <ElementType Name="usp_AgentComissionReportResult">
-      <Column Name="BillNo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="BillDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="led_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="led_agid" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Agent" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="OwnerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="OwnerPhone" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="led_tin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="led_cst" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Profit" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.usp_usersUpdate" Method="usp_usersUpdate">
     <Parameter Name="users_uid" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="users_name" Type="System.String" DbType="NVarChar(25)" />
@@ -1925,6 +1906,26 @@
       <Column Name="BillAmount" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
       <Column Name="Paid" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
       <Column Name="Type" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AgentComissionReport" Method="usp_AgentComissionReport">
+    <Parameter Name="agent_id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="fdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tdate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="usp_AgentComissionReportResult">
+      <Column Name="BillNo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="led_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="led_agid" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerPhone" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="led_tin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="led_cst" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Profit" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Received" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

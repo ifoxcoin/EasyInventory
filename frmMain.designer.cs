@@ -79,8 +79,10 @@
             this.btnStock = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanelSupplierOS = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanelCommissionOS = new System.Windows.Forms.RibbonPanel();
             this.btnReceiptRpt = new System.Windows.Forms.RibbonButton();
             this.btnSupplierOutstanding = new System.Windows.Forms.RibbonButton();
+            this.btnCommissionOutstanding = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnLedgerReport = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
@@ -380,6 +382,7 @@
             this.ribbonreport.Panels.Add(this.ribbonPanel1);
             this.ribbonreport.Panels.Add(this.ribbonPanel9);
             this.ribbonreport.Panels.Add(this.ribbonPanelSupplierOS);
+            this.ribbonreport.Panels.Add(this.ribbonPanelCommissionOS);
             this.ribbonreport.Panels.Add(this.ribbonPanel11);
             this.ribbonreport.Panels.Add(this.ribbonPanel12);
             this.ribbonreport.Panels.Add(this.ribbonPanelMaster);
@@ -451,6 +454,12 @@
             // 
             this.ribbonPanelSupplierOS.Items.Add(this.btnSupplierOutstanding);
             this.ribbonPanelSupplierOS.Text = "SupplierOS";
+
+            // 
+            // ribbonPanelCommissionOS
+            // 
+            this.ribbonPanelCommissionOS.Items.Add(this.btnCommissionOutstanding);
+            this.ribbonPanelCommissionOS.Text = "CommissionOS";
             // 
             // btnReceiptRpt
             // 
@@ -466,12 +475,17 @@
             //this.btnSupplierOutstanding.Text = "Supplier";
             this.btnSupplierOutstanding.Click += new System.EventHandler(this.btnSupplierOutstanding_Click);
 
-
+            // 
+            // btnCommissionOutstanding
+            // 
+            this.btnCommissionOutstanding.Image = global::standard.Properties.Resources.commissionOS_img;
+            this.btnCommissionOutstanding.SmallImage = global::standard.Properties.Resources.commissionOS_img;
+            this.btnCommissionOutstanding.Click += new System.EventHandler(this.btnCommissionOutstanding_Click);
             // 
             // ribbonPanel11
             // 
             this.ribbonPanel11.Items.Add(this.btnLedgerReport);
-            this.ribbonPanel11.Text = "AgentOutstanding";
+            this.ribbonPanel11.Text = "AgentOS";
             // 
             // btnLedgerReport
             // 
@@ -482,7 +496,7 @@
             // ribbonPanel12
             // 
             this.ribbonPanel12.Items.Add(this.btnLedgerwiseStock);
-            this.ribbonPanel12.Text = "Ledgerwise Stock";
+            this.ribbonPanel12.Text = "LedgerStock";
             // 
             // btnLedgerwiseStock
             // 
@@ -639,6 +653,7 @@
         private System.Windows.Forms.RibbonButton btnReceiptReport;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
         private System.Windows.Forms.RibbonPanel ribbonPanelSupplierOS;
+        private System.Windows.Forms.RibbonPanel ribbonPanelCommissionOS;
         private System.Windows.Forms.RibbonButton btnReceiptRpt;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonButton btnLedgerReport;
@@ -659,6 +674,7 @@
         private System.Windows.Forms.RibbonButton btnPayment;
         private System.Windows.Forms.RibbonTab ribbonreport1;
         private System.Windows.Forms.RibbonButton btnSupplierOutstanding;
+        private System.Windows.Forms.RibbonButton btnCommissionOutstanding;
     }
 }
 

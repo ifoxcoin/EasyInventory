@@ -544,6 +544,24 @@ namespace standard
             frm.Show();
         }
 
+        private void btnCommissionOutstanding_Click(object sender, EventArgs e)
+        {
+            frmTransactionRpt frm = new frmTransactionRpt();
+            frm._ReportName = "Commission Outstanding Report";
+            frm._LedgerType = "Agent";
+            if (!bu.CheckRights(Convert.ToString(frm.Tag), frm.Text))
+            {
+                frm.Close();
+                MessageBox.Show("Rights failed...");
+                return;
+            }
+            //foreach (Form F in this.MdiChildren)
+            //    if (frm.Name == F.Name)
+            //    { MessageBox.Show("Already Opened.."); return; }
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
 
         private void btnLedgerReport_Click(object sender, EventArgs e)
         {

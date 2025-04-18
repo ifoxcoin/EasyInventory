@@ -290,13 +290,6 @@ namespace standard.classes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_AgentComissionReport")]
-		public ISingleResult<usp_AgentComissionReportResult> usp_AgentComissionReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> agent_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fdate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> tdate)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agent_id, fdate, tdate);
-			return ((ISingleResult<usp_AgentComissionReportResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_usersUpdate")]
 		public int usp_usersUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> users_uid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string users_name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string users_pwd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> users_pid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> users_type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> users_lock)
 		{
@@ -1039,6 +1032,13 @@ namespace standard.classes
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), led_id, fdate, tdate);
 			return ((ISingleResult<usp_SupplierOutstandingRptResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_AgentComissionReport")]
+		public ISingleResult<usp_AgentComissionReportResult> usp_AgentComissionReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> agent_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fdate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> tdate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agent_id, fdate, tdate);
+			return ((ISingleResult<usp_AgentComissionReportResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -9710,230 +9710,6 @@ namespace standard.classes
 		{
 			this.SendPropertyChanging();
 			entity.purchasemaster = null;
-		}
-	}
-	
-	public partial class usp_AgentComissionReportResult
-	{
-		
-		private long _BillNo;
-		
-		private System.Nullable<System.DateTime> _BillDate;
-		
-		private long _led_id;
-		
-		private System.Nullable<long> _led_agid;
-		
-		private string _CustomerName;
-		
-		private string _Agent;
-		
-		private string _City;
-		
-		private string _OwnerName;
-		
-		private string _OwnerPhone;
-		
-		private string _led_tin;
-		
-		private string _led_cst;
-		
-		private decimal _Profit;
-		
-		public usp_AgentComissionReportResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillNo", DbType="BigInt NOT NULL")]
-		public long BillNo
-		{
-			get
-			{
-				return this._BillNo;
-			}
-			set
-			{
-				if ((this._BillNo != value))
-				{
-					this._BillNo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> BillDate
-		{
-			get
-			{
-				return this._BillDate;
-			}
-			set
-			{
-				if ((this._BillDate != value))
-				{
-					this._BillDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_id", DbType="BigInt NOT NULL")]
-		public long led_id
-		{
-			get
-			{
-				return this._led_id;
-			}
-			set
-			{
-				if ((this._led_id != value))
-				{
-					this._led_id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_agid", DbType="BigInt")]
-		public System.Nullable<long> led_agid
-		{
-			get
-			{
-				return this._led_agid;
-			}
-			set
-			{
-				if ((this._led_agid != value))
-				{
-					this._led_agid = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string CustomerName
-		{
-			get
-			{
-				return this._CustomerName;
-			}
-			set
-			{
-				if ((this._CustomerName != value))
-				{
-					this._CustomerName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Agent", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Agent
-		{
-			get
-			{
-				return this._Agent;
-			}
-			set
-			{
-				if ((this._Agent != value))
-				{
-					this._Agent = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string City
-		{
-			get
-			{
-				return this._City;
-			}
-			set
-			{
-				if ((this._City != value))
-				{
-					this._City = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string OwnerName
-		{
-			get
-			{
-				return this._OwnerName;
-			}
-			set
-			{
-				if ((this._OwnerName != value))
-				{
-					this._OwnerName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerPhone", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string OwnerPhone
-		{
-			get
-			{
-				return this._OwnerPhone;
-			}
-			set
-			{
-				if ((this._OwnerPhone != value))
-				{
-					this._OwnerPhone = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_tin", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string led_tin
-		{
-			get
-			{
-				return this._led_tin;
-			}
-			set
-			{
-				if ((this._led_tin != value))
-				{
-					this._led_tin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_cst", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string led_cst
-		{
-			get
-			{
-				return this._led_cst;
-			}
-			set
-			{
-				if ((this._led_cst != value))
-				{
-					this._led_cst = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Profit", DbType="Decimal(18,3) NOT NULL")]
-		public decimal Profit
-		{
-			get
-			{
-				return this._Profit;
-			}
-			set
-			{
-				if ((this._Profit != value))
-				{
-					this._Profit = value;
-				}
-			}
 		}
 	}
 	
@@ -23082,6 +22858,248 @@ namespace standard.classes
 				if ((this._Type != value))
 				{
 					this._Type = value;
+				}
+			}
+		}
+	}
+	
+	public partial class usp_AgentComissionReportResult
+	{
+		
+		private long _BillNo;
+		
+		private System.Nullable<System.DateTime> _BillDate;
+		
+		private long _led_id;
+		
+		private System.Nullable<long> _led_agid;
+		
+		private string _CustomerName;
+		
+		private string _Agent;
+		
+		private string _City;
+		
+		private string _OwnerName;
+		
+		private string _OwnerPhone;
+		
+		private string _led_tin;
+		
+		private string _led_cst;
+		
+		private decimal _Profit;
+		
+		private decimal _Received;
+		
+		public usp_AgentComissionReportResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillNo", DbType="BigInt NOT NULL")]
+		public long BillNo
+		{
+			get
+			{
+				return this._BillNo;
+			}
+			set
+			{
+				if ((this._BillNo != value))
+				{
+					this._BillNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> BillDate
+		{
+			get
+			{
+				return this._BillDate;
+			}
+			set
+			{
+				if ((this._BillDate != value))
+				{
+					this._BillDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_id", DbType="BigInt NOT NULL")]
+		public long led_id
+		{
+			get
+			{
+				return this._led_id;
+			}
+			set
+			{
+				if ((this._led_id != value))
+				{
+					this._led_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_agid", DbType="BigInt")]
+		public System.Nullable<long> led_agid
+		{
+			get
+			{
+				return this._led_agid;
+			}
+			set
+			{
+				if ((this._led_agid != value))
+				{
+					this._led_agid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this._CustomerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Agent", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Agent
+		{
+			get
+			{
+				return this._Agent;
+			}
+			set
+			{
+				if ((this._Agent != value))
+				{
+					this._Agent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string OwnerName
+		{
+			get
+			{
+				return this._OwnerName;
+			}
+			set
+			{
+				if ((this._OwnerName != value))
+				{
+					this._OwnerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerPhone", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string OwnerPhone
+		{
+			get
+			{
+				return this._OwnerPhone;
+			}
+			set
+			{
+				if ((this._OwnerPhone != value))
+				{
+					this._OwnerPhone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_tin", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string led_tin
+		{
+			get
+			{
+				return this._led_tin;
+			}
+			set
+			{
+				if ((this._led_tin != value))
+				{
+					this._led_tin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_led_cst", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string led_cst
+		{
+			get
+			{
+				return this._led_cst;
+			}
+			set
+			{
+				if ((this._led_cst != value))
+				{
+					this._led_cst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Profit", DbType="Decimal(18,3) NOT NULL")]
+		public decimal Profit
+		{
+			get
+			{
+				return this._Profit;
+			}
+			set
+			{
+				if ((this._Profit != value))
+				{
+					this._Profit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Received", DbType="Decimal(18,3) NOT NULL")]
+		public decimal Received
+		{
+			get
+			{
+				return this._Received;
+			}
+			set
+			{
+				if ((this._Received != value))
+				{
+					this._Received = value;
 				}
 			}
 		}

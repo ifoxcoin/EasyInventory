@@ -91,7 +91,7 @@ namespace standard.report
 
                 ledgermasterBindingSource.DataSource = sup;
 
-                if (_ReportName == "Agent Outstanding Report")
+                if (_ReportName == "Agent Outstanding Report" || _ReportName == "Commission Outstanding Report")
                 {
                     lblLedger.Text = "Agent";
                 }
@@ -136,7 +136,7 @@ namespace standard.report
                 lblCityName.Visible = false;
                 cboPartyType.SelectedIndex = 0;
             }
-            else if (_ReportName == "AgentCommission Report" || _ReportName == "Agent Outstanding Report")
+            else if (_ReportName == "Commission Outstanding Report" || _ReportName == "Agent Outstanding Report")
             {
 
 
@@ -213,10 +213,10 @@ namespace standard.report
                 this.Text = "Ledger Report";
                 lbltitle.Text = "Ledger Report";
             }
-            else if (_ReportName == "AgentCommission Report")
+            else if (_ReportName == "Commission Outstanding Report")
             {
-                this.Text = "Agent Commission Report";
-                lbltitle.Text = "Agent Commission Report";
+                this.Text = "Commission Outstanding Report";
+                lbltitle.Text = "Commission Outstanding Report";
             }
             else if (_ReportName == "Ledgerwise Outstanding Report")
             {
@@ -344,7 +344,7 @@ namespace standard.report
                     reportViewer1.LocalReport.DataSources.Add(reportsource);
                     reportViewer1.LocalReport.DataSources.Add(reportsource_Ledger);
                 }
-                else if (_ReportName == "AgentCommission Report")
+                else if (_ReportName == "Commission Outstanding Report")
                 {
                     var data = db.usp_AgentComissionReport(ledid, null, null);
                     reportViewer1.LocalReport.ReportEmbeddedResource = "standard.report.rptAgentCommission.rdlc";
@@ -455,7 +455,7 @@ namespace standard.report
             using (db)
             {
 
-                if (_ReportName == "Agent Outstanding Report")
+                if (_ReportName == "Agent Outstanding Report" || _ReportName == "Commission Outstanding Report")
                 {
                     //ledgermasterBindingSource.Clear();
                     var sup = from a in db.ledgermasters
@@ -638,7 +638,7 @@ namespace standard.report
 
         private void cboName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_ReportName == "Agent Outstanding Report")
+            if (_ReportName == "Agent Outstanding Report" || _ReportName == "Commission Outstanding Report")
             {
                 using (InventoryDataContext inventoryDataContext = new InventoryDataContext())
                 {

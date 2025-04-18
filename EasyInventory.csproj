@@ -382,6 +382,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\standard.classes.packingreceipt.datasource" />
+    <None Include="Properties\DataSources\standard.classes.usp_AgentComissionReportResult.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_commissionreceiptSelectResult.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_itemSelectResult1.datasource" />
     <None Include="Properties\DataSources\standard.classes.usp_ledgerItemDetailsReportResult.datasource" />
@@ -451,6 +452,7 @@
     <Content Include="bin\x86\Debug\mymain.dll" />
     <Content Include="bin\x86\Debug\System.Windows.Forms.Ribbon35.dll" />
     <Content Include="Clock.ico" />
+    <None Include="Resources\commissionOS_img.png" />
     <None Include="Resources\PaymentRpt.png" />
     <None Include="Resources\56_32x32.png" />
     <None Include="Resources\help.png" />
